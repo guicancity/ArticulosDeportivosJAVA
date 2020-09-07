@@ -55,14 +55,12 @@
        
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="Imagenes/1.jpg" alt="Los Angeles">
+                <img height="550px" width="100%" src="Imagenes/1.jpg">
             </div>
             <div class="carousel-item">
-                <img  src="Imagenes/2.jpg" alt="Chicago">
+                <img height="550px" width="100%"  src="Imagenes/2.jpg">
             </div>
-            <div class="carousel-item">
-                <img src="Imagenes/3.jpg" alt="New York">
-            </div>
+            
         </div>
 
         <!-- Left and right controls -->
@@ -75,6 +73,27 @@
 
     </div>
 </div>
-    <h1> Bienvenidos A todos </h1>
+    <footer class="footer text-center p-4" style="background: black">
+    <div class="container">
+      <div class="row" >
+
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4" style="color: white"> Contactanos </h4>
+          <p class="lead mb-0" style="color: white"> jfex@hotmail.com</p>
+        </div>
+
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4" style="color: white">Derechos Reservados &copy; 2020 JFEX </h4>
+        </div>
+
+        <div class="col-lg-4">
+          <h4 class="text-uppercase mb-4" style="color: white"> Llamanos </h4>
+          <p class="lead mb-0">
+           <p class="lead mb-0" style="color: white"> (+57) 3112827980</p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
