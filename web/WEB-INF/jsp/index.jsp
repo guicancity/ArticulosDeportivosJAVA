@@ -55,10 +55,10 @@
        
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="Imagenes/Slider.jpg" alt="Los Angeles">
+                <img src="Imagenes/1.jpg" alt="Los Angeles">
             </div>
             <div class="carousel-item">
-                <img  src="2.jpg" alt="Chicago">
+                <img  src="Imagenes/2.jpg" alt="Chicago">
             </div>
             <div class="carousel-item">
                 <img src="Imagenes/3.jpg" alt="New York">
