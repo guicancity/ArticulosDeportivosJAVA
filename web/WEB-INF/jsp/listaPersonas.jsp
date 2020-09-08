@@ -50,13 +50,12 @@
             <h1 class="text-center">Personas</h1>
             
             <table class="table table-hover">
-                <thead>
+                <thead class="thead-light">
                     <tr>
                         
-                        <th>Primer nombre</th>
-                        <th>Segundo nombre</th>
-                        <th>Primer apellido</th>
-                        <th>Segundo apellido</th>
+                        
+                        <th>Nombre completo</th>
+                        
                         <th>Dirección</th>
                         <th>Celular</th>
                         <th>Tipo de documento</th>
@@ -70,10 +69,7 @@
      
                     <c:forEach var="persona" items="${lsPersona}">
                                 <tr>                               
-                                    <td>${persona.nombre1}</td>
-                                    <td>${persona.nombre2}</td>
-                                    <td>${persona.apellido1}</td>
-                                    <td>${persona.apellido2}</td>
+                                    <td>${persona.nombre1} ${persona.nombre2} ${persona.apellido1} ${persona.apellido2}</td>
                                     <td>${persona.direccion}</td>
                                     <td>${persona.celular}</td>
                                     <td>${persona.tipoDocumento}</td>                                    
