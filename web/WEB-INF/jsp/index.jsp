@@ -41,7 +41,6 @@
             </ul>
         </div>
     </nav> 
- <div class="container">
     <div id="demo" class="carousel slide" data-ride="carousel">
 
         <!-- Indicators -->
@@ -75,7 +74,7 @@
         </a>
 
     </div>
-</div>
+
     <footer class="footer text-center p-4" style="background: black">
     <div class="container">
       <div class="row" >
