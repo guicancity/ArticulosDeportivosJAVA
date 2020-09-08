@@ -27,13 +27,13 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Productos</a>
+                    <a class="nav-link" href="producto.txt">Productos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Pedido</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cliente</a>
+                    <a class="nav-link" href="persona.txt">Cliente</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Factura</a>
@@ -59,6 +59,9 @@
             </div>
             <div class="carousel-item">
                 <img height="550px" width="100%"  src="Imagenes/2.jpg">
+            </div>
+            <div class="carousel-item">
+                <img height="550px" width="100%"  src="Imagenes/3.jpg">
             </div>
             
         </div>
