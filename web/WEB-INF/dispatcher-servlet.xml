@@ -20,6 +20,7 @@
         <property name="mappings">
             <props>
                 <prop key="index.txt">HomeController</prop>
+                <prop key="persona.txt">PersonaController</prop>
             </props>
         </property>
     </bean>
@@ -37,5 +38,6 @@
           p:viewName="index" />
     
      <bean name="HomeController" class="Controller.HomeController"/>
+     <bean name="PersonaController" class="Controller.PersonaController"/>  
 
 </beans>
