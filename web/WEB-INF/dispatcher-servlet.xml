@@ -39,6 +39,7 @@
           p:viewName="index" />
     
      <bean name="HomeController" class="Controller.HomeController"/>
-     <bean name="PersonaController" class="Controller.PersonaController"/>  
+     <bean name="PersonaController" class="Controller.PersonaController"/> 
+     <bean name="ProductoController" class="Controller.ProductoController"/>  
 
 </beans>
