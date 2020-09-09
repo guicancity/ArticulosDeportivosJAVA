@@ -6,8 +6,10 @@
 package Controller;
 
 import Business.PersonaBL;
+import Model.Persona;
 import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -26,5 +28,19 @@ public class PersonaController {
         mav.addObject("lsPersona", datos);
         mav.setViewName("listaPersonas");
         return mav;
+    }
+    
+    
+    
+    @RequestMapping(value="insertaPersona.txt",method=RequestMethod.GET)
+    public ModelAndView Agregar(){
+        mav.addObject(new Persona());
+        mav.setViewName("insertaPersona");
+        return mav;
+    } 
+     @RequestMapping(value="insertaPersona.txt",method=RequestMethod.POST)
+    public ModelAndView Agregar(Persona p){        
+        personaBL.insertar(p);
+        return new ModelAndView("redirect:/persona.txt");
     }
 }

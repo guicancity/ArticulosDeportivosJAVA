@@ -21,7 +21,10 @@
             <props>
                 <prop key="index.txt">HomeController</prop>
                 <prop key="persona.txt">PersonaController</prop>
+                <prop key="insertaPersona.txt">PersonaController</prop>
+                
                 <prop key="producto.txt">ProductoController</prop>
+                
             </props>
         </property>
     </bean>

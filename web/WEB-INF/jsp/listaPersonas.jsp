@@ -46,8 +46,8 @@
         </div>
     </nav> 
         <div class="container pt-3">
-            <a href="#" class="btn btn-success">Nuevo registro</a>
-            <h1 class="text-center">Personas</h1>
+            <a href="insertaPersona.txt" type="button" class="btn btn-success"  > Nuevo registro</a>
+           <h1 class="text-center">Personas</h1>
             
             <table class="table table-hover">
                 <thead class="thead-light">
@@ -55,7 +55,6 @@
                         
                         
                         <th>Nombre completo</th>
-                        
                         <th>Dirección</th>
                         <th>Celular</th>
                         <th>Tipo de documento</th>
