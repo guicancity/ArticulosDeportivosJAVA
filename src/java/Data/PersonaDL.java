@@ -24,9 +24,9 @@ public class PersonaDL {
         datos = jdbctemplate.queryForList(sql);
         return datos;
     }
-    public void insertar(Persona persona){
-      String sql = "INSERT into persona(Nombre1,Nombre2,Apellido1,Apellido2,Direccion,Celular,TipoDocumento,NumeroDocumento,FechaNacimiento)VALUES(?,?,?,?,?,?,?,?,?)";
-      jdbctemplate.update(sql,persona.getNombre1(),persona.getNombre2(),persona.getApellido1(),persona.getApellido2(), persona.getDireccion(),persona.getDireccion(),persona.getCelular(),persona.getTipoDocumento(),persona.getFechaNacimiento()); 
+    public void insertar(Persona p){
+      String sql = "INSERT INTO persona(Nombre1,Nombre2,Apellido1,Apellido2,Direccion,Celular,TipoDocumento,NumeroDocumento,FechaNacimiento) VALUES (?,?,?,?,?,?,?,?,?)";
+      jdbctemplate.update(sql,p.getNombre1(),p.getNombre2(),p.getApellido1(),p.getApellido2(), p.getDireccion(),p.getDireccion(),p.getCelular(),p.getTipoDocumento(),p.getFechaNacimiento()); 
     }
     
     public List buscaDato(int id){

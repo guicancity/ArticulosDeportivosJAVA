@@ -39,8 +39,8 @@ public class PersonaController {
         return mav;
     } 
      @RequestMapping(value="insertaPersona.txt",method=RequestMethod.POST)
-    public ModelAndView Agregar(Persona p){        
-        personaBL.insertar(p);
-        return new ModelAndView("redirect:/persona.txt");
+    public ModelAndView Agregar(Persona d){        
+        personaBL.insertar(d);
+        return new ModelAndView("redirect:/indexDepto.htm");
     }
 }
