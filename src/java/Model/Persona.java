@@ -5,7 +5,6 @@
  */
 package Model;
 
-import java.util.Date;
 
 /**
  *
@@ -13,8 +12,7 @@ import java.util.Date;
  */
 public class Persona {
     private int id;
-    private String nombre1,nombre2,apellido1,apellido2,direccion,celular,tipoDocumento,numeroDocumento;
-    private Date fechaNacimiento;
+    private String nombre1,nombre2,apellido1,apellido2,direccion,celular,tipoDocumento,numerodocumento, fechanacimiento;
 
     public int getId() {
         return id;
@@ -72,29 +70,28 @@ public class Persona {
         this.celular = celular;
     }
 
-    public String getTipoDocumento() {
+    public String getTipodocumento() {
         return tipoDocumento;
     }
 
-    public void setTipoDocumento(String tipoDocumento) {
-        this.tipoDocumento = tipoDocumento;
+    public void setTipodocumento(String tipodocumento) {
+        this.tipoDocumento = tipodocumento;
     }
 
-    public String getNumeroDocumento() {
-        return numeroDocumento;
+    public String getNumerodocumento() {
+        return numerodocumento;
     }
 
-    public void setNumeroDocumento(String numeroDocumento) {
-        this.numeroDocumento = numeroDocumento;
+    public void setNumerodocumento(String numerodocumento) {
+        this.numerodocumento = numerodocumento;
     }
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
+    public String getFechanacimiento() {
+        return fechanacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-   
+    public void setFechanacimiento(String fechanacimiento) {
+        this.fechanacimiento = fechanacimiento;
+    }  
     
 }

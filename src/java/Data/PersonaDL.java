@@ -7,7 +7,6 @@ package Data;
 
 import Model.Persona;
 import java.util.List;
-import org.springframework.jdbc.JdbcUpdateAffectedIncorrectNumberOfRowsException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
@@ -25,8 +24,8 @@ public class PersonaDL {
         return datos;
     }
     public void insertar(Persona p){
-      String sql = "INSERT INTO persona(Nombre1,Nombre2,Apellido1,Apellido2,Direccion,Celular,TipoDocumento,NumeroDocumento,FechaNacimiento) VALUES (?,?,?,?,?,?,?,?,?)";
-      jdbctemplate.update(sql,p.getNombre1(),p.getNombre2(),p.getApellido1(),p.getApellido2(), p.getDireccion(),p.getDireccion(),p.getCelular(),p.getTipoDocumento(),p.getFechaNacimiento()); 
+        String sql="INSERT INTO persona (Nombre1, Nombre2, Apellido1, Apellido2, Direccion, Celular, TipoDocumento, NumeroDocumento, FechaNacimiento) VALUES (?,?,?,?,?,?,?,?,?)";
+        jdbctemplate.update(sql, p.getNombre1(),p.getNombre2(), p.getApellido1(), p.getApellido2(), p.getDireccion(), p.getCelular(), p.getTipodocumento(), p.getNumerodocumento(), p.getFechanacimiento());
     }
     
     public List buscaDato(int id){
@@ -36,14 +35,14 @@ public class PersonaDL {
     }
     public void actualizar(Persona persona){
         String sql = "UPDATE persona SET Nombre1 = ?,Nombre2 = ?,Apellido1 = ?,Apellido2 = ?,Direccion = ?,Celular = ?,TipoDocumento = ?,NumeroDocumento = ?,FechaNacimiento = ? WHERE Id = ? ";
-        jdbctemplate.update(sql,persona.getNombre1(),persona.getNombre2(),persona.getApellido1(),persona.getApellido2(), persona.getDireccion(), persona.getCelular(),persona.getTipoDocumento(),persona.getNumeroDocumento(),persona.getFechaNacimiento(),persona.getId());
+         jdbctemplate.update(sql,persona.getNombre1(),persona.getNombre2(),persona.getApellido1(),persona.getApellido2(), persona.getDireccion(),persona.getDireccion(),persona.getCelular(),persona.getTipodocumento(), persona.getNumerodocumento(), persona.getFechanacimiento());
     }
     public void eliminar(int id){
         try {
              String sql = "DELETE FROM persona WHERE Id =" + id;
         this.jdbctemplate.update(sql);
-        } catch (JdbcUpdateAffectedIncorrectNumberOfRowsException e) {
-            System.err.println("error al eliminar " + e);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
        
         

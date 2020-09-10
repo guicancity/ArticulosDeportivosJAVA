@@ -47,7 +47,7 @@
         </div>
     </nav>
         <div class="container pt-3"> 
-            <a href="" class="btn btn-success"> Nuevo Registro </a>
+            <a href="insertaProducto.txt" class="btn btn-success"> Nuevo Registro </a>
             <h1 class="text-center"> Productos </h1>
             <br>
         <table class="table table-hover">

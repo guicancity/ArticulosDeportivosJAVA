@@ -26,7 +26,7 @@ public class ProductoDL {
     }
     
     public void insertar(Producto p){
-        String sql="INSER INTO producto " + "(TipoProducto, Nombre, Descripcion, Valor, Stock) VALUES (?,?,?.?.?)";
+        String sql="INSERT INTO producto " + "(TipoProducto, Nombre, Descripcion, Valor, Stock) VALUES (?,?,?,?,?)";
         jdbctemplate.update(sql, p.getTipoproducto(), p.getNombre(), p.getDescripcion(), p.getValor(), p.getStock());
     }
     

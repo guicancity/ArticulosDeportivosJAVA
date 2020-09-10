@@ -33,18 +33,15 @@
                 <label>Celular</label>
                 <input type="text" name="celular" required="" class="form-control">
                 <label>Tipo de documento</label>
-                <input type="text" name="tipoDocumento" required="" class="form-control">
+                <input type="text" name="tipodocumento" required="" class="form-control">
                 <label>Numero de documento</label>
-                <input type="text" name="numeroDocumento" required="" class="form-control">
+                <input type="text" name="numerodocumento" required="" class="form-control">
                 <label>Fecha de nacimiento</label>
-                <input type="date" name="fechaNacimiento" required="" class="form-control">
+                <input type="date" name="fechanacimiento" required="" class="form-control">
 
                 <input type="submit" value="Agregar" class="btn btn-success" >
 
             </form>
         </div>
-    </div>
-</div>
-</div>
 </body>
 </html>
