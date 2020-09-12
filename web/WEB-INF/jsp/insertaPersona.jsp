@@ -49,59 +49,59 @@
             <div class="row">
                 <div class="col-12">
                     <div class="row">
-                        <div class="col text-center"> <h3>Registro de nuevo cliente</h3> </div>
+                        <div class="col text-center"> <h1> Nuevo cliente</h1> </div>
                     </div>
                     <form method="POST">
                         <div class="row">
                             <div class="col-6">
-                                <label> <h4>Primer nombre</h4></label>
+                                <h5>Primer nombre</h5>
                                 <input type="text" name="nombre1" required="" class="form-control">
                             </div>
                             <div class="col-6">
-                                <label> <h4> Segundo nombre</h4></label>
+                                <h5> Segundo nombre</h5>
                                 <input type="text" name="nombre2"  class="form-control">
-
                             </div>
                         </div>
-
+                        <br>
                         <div class="row">
                             <div class="col-6">
-                                <label> <h4> Primer apellido </h4> </label>
+                                <h5>Primer apellido</h5>
                                 <input type="text" name="apellido1" required="" class="form-control">
                             </div>
                             <div class="col-6">
-                                <label> <h4> Segundo apellido </h4></label>
+                                <h5> Segundo apellido </h5>
                                 <input type="text" name="apellido2"  class="form-control">
                             </div>
                         </div>
+                        <br>
                         <div class="row">
                             <div class="col-6">
-                                <label> <h4>Direccion</h4></label>
+                                <h5>Dirección</h5>
                                 <input type="text" name="direccion" required="" class="form-control">
                             </div>
                             <div class="col-6">
-                                <label><h4>Celular</h4></label>
+                                <h5>Celular</h5>
                                 <input type="number" name="celular" required="" class="form-control">
                             </div>
                         </div>
+                        <br>
                         <div class="row">
                             <div class="col-6">
-                                <label><h4>Tipo de documento</h4></label>
+                                <h5>Tipo de documento</h5>
                                 <select name="tipodocumento" class="custom-select">
                                     <option value="CEDULA">Cédula de ciudadanía</option>
                                     <option value="TARJETAIDENTIDAD">Tarjeta de identidad</option>
                                 </select>
                             </div>
                             <div class="col-6">
-                                <label><h4>Numero de documento</h4></label>
+                                <h5>Numero de documento</h5>
                                 <input type="number" name="numerodocumento" required="" class="form-control"></div>
                         </div>
-
-
+                        <br>
                         <div class="row">
                             <div class="col-6">
-                                <label><h4>Fecha de nacimiento</h4></label>
-                        <input type="date" name="fechanacimiento" required="" class="form-control">
+                                <h5>Fecha de nacimiento</h5>
+                                <input type="date" name="fechanacimiento" required="" class="form-control">
                             </div>
                         </div>
 
@@ -109,7 +109,7 @@
                         
                         <div class="row">
                             <div class="col text-center my-4">
-                                <input type="submit" value="Agregar" class="btn btn-success btn-lg" >
+                                <input type="submit" value="Agregar" class="btn btn-success" >
                             </div>
                         </div>
 

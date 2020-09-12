@@ -16,67 +16,92 @@
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="bootstrap/estilos.css">
+        <link rel="stylesheet" href="bootstrap/font-awesome/css/font-awesome.min.css">
         <title> Articulos Deportivos || Producto </title>
     </head>
     <body>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <!-- Brand -->
-        <a class="navbar-brand" href="index.txt">Inicio</a>
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.txt">Inicio</a>
 
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="producto.txt">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pedido</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="persona.txt">Cliente</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Factura</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="producto.txt">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pedido</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="persona.txt">Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Factura</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <div class="container pt-3"> 
             <a href="insertaProducto.txt" class="btn btn-success"> Nuevo Registro </a>
             <h1 class="text-center"> Productos </h1>
             <br>
-        <table class="table table-hover">
-            <thead class="thead-light">
-                <tr>                               
-                    <th>Tipo Producto</th>                               
-                    <th>Nombre</th>
-                    <th>Descripcion</th>
-                    <th>Valor</th>
-                    <th>Stock</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <c:forEach var="producto" items="${lsProductos}">
+            <table class="table table-hover">
+                <thead class="thead-light">
                     <tr>                               
-                        <td>${producto.tipoproducto}</td>
-                        <td>${producto.nombre}</td> 
-                        <td>${producto.descripcion}</td> 
-                        <td>${producto.valor}</td> 
-                        <td>${producto.stock}</td>
-                        <td>
-                            <a href="editarProducto.txt?id=${producto.id}" class="btn btn-outline-info"> Editar</a>
-                            <a onclick="return confirm('¿Esta seguro?');" href="deleteProducto.txt?id=${producto.id}" class="btn btn-outline-danger"> Eliminar</a>
-                        </td>
+                        <th>Tipo Producto</th>                               
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Valor</th>
+                        <th>Stock</th>
+                        <th colspan="2" class="text-center">Acciones</th>
                     </tr>
-                </c:forEach>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <c:forEach var="producto" items="${lsProductos}">
+                        <tr>                               
+                            <td>${producto.tipoproducto}</td>
+                            <td>${producto.nombre}</td> 
+                            <td>${producto.descripcion}</td> 
+                            <td>${producto.valor}</td> 
+                            <td>${producto.stock}</td>
+                            <td>
+                                <a href="editarProducto.txt?id=${producto.id}" class="btn btn-outline-info fa fa-edit fa-2x"> </a>
+                            </td>
+                            <td>
+                                <a onclick="return confirm('¿Esta seguro?');" href="deleteProducto.txt?id=${producto.id}" class="btn btn-outline-danger fa fa-trash fa-2x"> </a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
         </div>
+        <footer class="footer text-center p-4" style="background: black">
+            <div class="container">
+                <div class="row" >
+
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4" style="color: white"> Contactanos </h4>
+                        <p class="lead mb-0" style="color: white"> jfex@hotmail.com</p>
+                    </div>
+
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4" style="color: white">Derechos Reservados &copy; 2020 JFEX </h4>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4" style="color: white"> Llamanos </h4>
+                        <p class="lead mb-0">
+                        <p class="lead mb-0" style="color: white"> (+57) 3112827980</p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
