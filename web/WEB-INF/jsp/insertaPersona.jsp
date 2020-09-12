@@ -17,31 +17,130 @@
         <title> Articulos Deportivos || Clientes </title>
     </head>
     <body>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.txt">Inicio</a>
 
-        <div class="container">
-            <form method="POST">
-                <label>primer nombre</label>
-                <input type="text" name="nombre1" required="" class="form-control">
-                <label>Segundo nombre</label>
-                <input type="text" name="nombre2"  class="form-control">
-                <label>Primer apellido</label>
-                <input type="text" name="apellido1" required="" class="form-control">
-                <label>Segundo apellido</label>
-                <input type="text" name="apellido2"  class="form-control">
-                <label>Direccion</label>
-                <input type="text" name="direccion" required="" class="form-control">
-                <label>Celular</label>
-                <input type="text" name="celular" required="" class="form-control">
-                <label>Tipo de documento</label>
-                <input type="text" name="tipodocumento" required="" class="form-control">
-                <label>Numero de documento</label>
-                <input type="text" name="numerodocumento" required="" class="form-control">
-                <label>Fecha de nacimiento</label>
-                <input type="date" name="fechanacimiento" required="" class="form-control">
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <input type="submit" value="Agregar" class="btn btn-success" >
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="producto.txt">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pedido</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="persona.txt">Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Factura</a>
+                    </li>
+                </ul>
+            </div>
+        </nav> 
 
-            </form>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col text-center"> <h3>Registro de nuevo cliente</h3> </div>
+                    </div>
+                    <form method="POST">
+                        <div class="row">
+                            <div class="col-6">
+                                <label> <h4>Primer nombre</h4></label>
+                                <input type="text" name="nombre1" required="" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label> <h4> Segundo nombre</h4></label>
+                                <input type="text" name="nombre2"  class="form-control">
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <label> <h4> Primer apellido </h4> </label>
+                                <input type="text" name="apellido1" required="" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label> <h4> Segundo apellido </h4></label>
+                                <input type="text" name="apellido2"  class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label> <h4>Direccion</h4></label>
+                                <input type="text" name="direccion" required="" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label><h4>Celular</h4></label>
+                                <input type="number" name="celular" required="" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label><h4>Tipo de documento</h4></label>
+                                <select name="tipodocumento" class="custom-select">
+                                    <option value="CEDULA">Cédula de ciudadanía</option>
+                                    <option value="TARJETAIDENTIDAD">Tarjeta de identidad</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label><h4>Numero de documento</h4></label>
+                                <input type="number" name="numerodocumento" required="" class="form-control"></div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-6">
+                                <label><h4>Fecha de nacimiento</h4></label>
+                        <input type="date" name="fechanacimiento" required="" class="form-control">
+                            </div>
+                        </div>
+
+
+                        
+                        <div class="row">
+                            <div class="col text-center my-4">
+                                <input type="submit" value="Agregar" class="btn btn-success btn-lg" >
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
         </div>
-</body>
+
+
+        <footer class="footer text-center p-4" style="background: black">
+            <div class="container">
+                <div class="row" >
+
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4" style="color: white"> Contactanos </h4>
+                        <p class="lead mb-0" style="color: white"> jfex@hotmail.com</p>
+                    </div>
+
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4" style="color: white">Derechos Reservados &copy; 2020 JFEX </h4>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4" style="color: white"> Llamanos </h4>
+                        <p class="lead mb-0">
+                        <p class="lead mb-0" style="color: white"> (+57) 3112827980</p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>
