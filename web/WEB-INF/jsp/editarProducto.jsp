@@ -1,11 +1,10 @@
 <%-- 
-    Document   : indexProducto
-    Created on : 8/09/2020, 10:03:40 AM
+    Document   : editarProducto
+    Created on : 14/09/2020, 09:47:28 AM
     Author     : Xiomara
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,9 +16,9 @@
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="bootstrap/estilos.css">
         <link rel="stylesheet" href="bootstrap/font-awesome/css/font-awesome.min.css">
-        <title> Articulos Deportivos || Producto </title>
+        <title> Articulos Deportivos || Editar Producto </title>
     </head>
-    <body>
+   <body>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <!-- Brand -->
             <a class="navbar-brand" href="index.txt">Inicio</a>
@@ -46,40 +45,52 @@
                     </li>
                 </ul>
             </div>
-        </nav>
-        <div class="container pt-3"> 
-            <a href="insertaProducto.txt" class="btn btn-success"> Nuevo Registro </a>
-            <h1 class="text-center"> Productos </h1>
-            <br>
-            <table class="table table-hover">
-                <thead class="thead-light">
-                    <tr>                               
-                        <th>Tipo Producto</th>                               
-                        <th>Nombre</th>
-                        <th>Descripcion</th>
-                        <th>Valor</th>
-                        <th>Stock</th>
-                        <th colspan="2" class="text-center">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach var="producto" items="${lsProductos}">
-                        <tr>                               
-                            <td>${producto.tipoProducto}</td>
-                            <td>${producto.nombre}</td> 
-                            <td>${producto.descripcion}</td> 
-                            <td>${producto.valor}</td> 
-                            <td>${producto.stock}</td>
-                            <td>
-                                <a href="editarProducto.txt?id=${producto.id}" class="btn btn-outline-info fa fa-edit fa-2x"> </a>
-                            </td>
-                            <td>
-                                <a onclick="return confirm('¿Esta seguro?');" href="deleteProducto.txt?id=${producto.id}" class="btn btn-outline-danger fa fa-trash fa-2x"> </a>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
+        </nav> 
+
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col text-center"> <h1> Actualizar producto</h1> </div>
+                    </div>
+                    <form method="POST" >
+                        <div class="row">
+                            <div class="col-6">
+                                <h5> Tipo Producto </h5>
+                                <input type="text" name="tipoProducto" required class="form-control" value="${lsProductos[0].tipoproducto}">
+                            </div>
+                            <div class="col-6">
+                                <h5>Nombre</h5>
+                                <input type="text" name="nombre" required="" class="form-control" value="${lsProductos[0].nombre}"> 
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <h5> Descripción </h5>
+                                <input type="text" name="descripcion" required class="form-control" value="${lsProductos[0].descripcion}">
+                            </div>
+                            <div class="col-6">
+                                <h5>Valor</h5>
+                                <input type="number" name="valor" required="" class="form-control" value="${lsProductos[0].valor}"> 
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <h5>Stock</h5>
+                                <input type="number" name="stock" required="" class="form-control" value="${lsProductos[0].stock}"> 
+                            </div>
+                        </div>
+                           <div class="row">
+                            <div class="col text-center my-4">
+                                <input type="submit" value="Actualizar" id="Actualizar" class="btn btn-info" >
+                            </div>
+                        </div>           
+
+                    </form>
+                </div>
+            </div>
         </div>
         <footer class="footer text-center p-4" style="background: black">
             <div class="container">
@@ -105,3 +116,12 @@
         </footer>
     </body>
 </html>
+   <script>
+ $(document).ready(function(){
+  $("#Actualizar").on("click",function()
+  {
+   alert('Actualizado con éxito');
+  });
+
+});
+</script>

@@ -10,12 +10,8 @@ package Model;
  * @author Xiomara
  */
 public class Producto {
-    private int id;
-    private String tipoproducto;
-    private String nombre;
-    private String descripcion;
-    private int valor;
-    private int stock;
+    private int id, valor, stock;
+    private String tipoProducto, nombre, descripcion;
 
     public int getId() {
         return id;
@@ -23,30 +19,6 @@ public class Producto {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getTipoproducto() {
-        return tipoproducto;
-    }
-
-    public void setTipoproducto(String tipoproducto) {
-        this.tipoproducto = tipoproducto;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
     }
 
     public int getValor() {
@@ -65,5 +37,27 @@ public class Producto {
         this.stock = stock;
     }
 
-      
+    public String getTipoProducto() {
+        return tipoProducto;
+    }
+
+    public void setTipoProducto(String tipoProducto) {
+        this.tipoProducto = tipoProducto;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }      
 }

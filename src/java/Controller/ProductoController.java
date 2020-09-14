@@ -45,6 +45,21 @@ public class ProductoController {
         return new ModelAndView("redirect:/producto.txt");
     }
     
+        @RequestMapping(value="editarProducto.txt",method=RequestMethod.GET)
+    public ModelAndView Editar(HttpServletRequest request){
+        id=Integer.parseInt(request.getParameter("id"));
+        datos=productobl.buscar(id);
+        mav.addObject("lsProductos",datos);
+        mav.setViewName("editarProducto");
+        return mav;
+    }
+    
+    @RequestMapping(value="editarProducto.txt",method=RequestMethod.POST)
+    public ModelAndView Editar(Producto p) {
+        productobl.actualizar(p);
+        return new ModelAndView("redirect:/producto.txt");
+    }
+    
     @RequestMapping("deleteProducto.txt")
     public ModelAndView Delete(HttpServletRequest request){
         id=Integer.parseInt(request.getParameter("id"));

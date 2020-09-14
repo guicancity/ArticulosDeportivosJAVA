@@ -26,6 +26,7 @@
                 <prop key="producto.txt">ProductoController</prop>
                 <prop key="insertaProducto.txt">ProductoController</prop>
                 <prop key="deleteProducto.txt">ProductoController</prop>
+                <prop key="editarProducto.txt">ProductoController</prop>
                 
             </props>
         </property>

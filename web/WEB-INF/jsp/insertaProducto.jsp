@@ -55,29 +55,29 @@
                         <div class="row">
                             <div class="col-6">
                                 <h5> Tipo Producto </h5>
-                                <input type="text" name="Tipoproducto" required class="form-control">
+                                <input type="text" name="tipoProducto" required class="form-control">
                             </div>
                             <div class="col-6">
                                 <h5>Nombre</h5>
-                                <input type="text" name="Nombre" required="" class="form-control"> 
+                                <input type="text" name="nombre" required="" class="form-control"> 
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-6">
                                 <h5> Descripción </h5>
-                                <input type="text" name="Descripcion" required class="form-control">
+                                <input type="text" name="descripcion" required class="form-control">
                             </div>
                             <div class="col-6">
                                 <h5>Valor</h5>
-                                <input type="number" name="Valor" required="" class="form-control"> 
+                                <input type="number" name="valor" required="" class="form-control"> 
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-6">
                                 <h5>Stock</h5>
-                                <input type="number" name="Stock" required="" class="form-control"> 
+                                <input type="number" name="stock" required="" class="form-control"> 
                             </div>
                         </div>
                            <div class="row">

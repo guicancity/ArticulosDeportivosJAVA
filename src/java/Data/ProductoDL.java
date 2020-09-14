@@ -26,8 +26,8 @@ public class ProductoDL {
     }
     
     public void insertar(Producto p){
-        String sql="INSERT INTO producto " + "(TipoProducto, Nombre, Descripcion, Valor, Stock) VALUES (?,?,?,?,?)";
-        jdbctemplate.update(sql, p.getTipoproducto(), p.getNombre(), p.getDescripcion(), p.getValor(), p.getStock());
+        String sql="INSERT INTO producto (TipoProducto, Nombre, Descripcion, Valor, Stock) VALUES (?,?,?,?,?)";
+        jdbctemplate.update(sql, p.getTipoProducto(), p.getNombre(), p.getDescripcion(), p.getValor(), p.getStock());
     }
     
     public List buscar(int id) {
@@ -37,8 +37,8 @@ public class ProductoDL {
     }
     
     public void actualizar(Producto p){
-        String sql="UPDATE producto SET" + "TipoProducto=?, Nombre=?, Descripcion=?, Valor=?, Stock=? WHERE Id=?";
-        jdbctemplate.update(sql,p.getTipoproducto(),p.getNombre(), p.getDescripcion(), p.getValor(), p.getStock(), p.getId());     
+        String sql="UPDATE producto SET TipoProducto=?, Nombre=?, Descripcion=?, Valor=?, Stock=? WHERE Id=?";
+        jdbctemplate.update(sql,p.getTipoProducto(),p.getNombre(), p.getDescripcion(), p.getValor(), p.getStock(), p.getId());     
     }
     
     public void eliminar(int id) {
