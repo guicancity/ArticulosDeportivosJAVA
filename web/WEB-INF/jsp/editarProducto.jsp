@@ -19,7 +19,7 @@
         <title> Articulos Deportivos || Editar Producto </title>
     </head>
    <body>
-        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <!-- Brand -->
             <a class="navbar-brand" href="index.txt">Inicio</a>
 
@@ -35,17 +35,17 @@
                         <a class="nav-link" href="producto.txt">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pedido</a>
+                        <a class="nav-link" href="pedido.txt">Pedido</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="persona.txt">Cliente</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Factura</a>
+                        <a class="nav-link" href="factura.txt">Factura</a>
                     </li>
                 </ul>
             </div>
-        </nav> 
+        </nav>
 
         <div class="container mt-4">
             <div class="row">

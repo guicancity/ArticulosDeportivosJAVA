@@ -14,33 +14,33 @@
     </head>
 
     <body>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <!-- Brand -->
-        <a class="navbar-brand" href="#">Inicio</a>
+     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.txt">Inicio</a>
 
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="producto.txt">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pedido</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="persona.txt">Cliente</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Factura</a>
-                </li>
-            </ul>
-        </div>
-    </nav> 
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="producto.txt">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pedido.txt">Pedido</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="persona.txt">Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="factura.txt">Factura</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     <div id="demo" class="carousel slide" data-ride="carousel">
 
         <!-- Indicators -->

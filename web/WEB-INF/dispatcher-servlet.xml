@@ -27,6 +27,7 @@
                 <prop key="insertaProducto.txt">ProductoController</prop>
                 <prop key="deleteProducto.txt">ProductoController</prop>
                 <prop key="editarProducto.txt">ProductoController</prop>
+                <prop key="pedido.txt">PedidoController</prop>
                 
             </props>
         </property>
@@ -44,8 +45,8 @@
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
     
-     <bean name="HomeController" class="Controller.HomeController"/>
-     <bean name="PersonaController" class="Controller.PersonaController"/> 
-     <bean name="ProductoController" class="Controller.ProductoController"/>  
-
+    <bean name="HomeController" class="Controller.HomeController"/>
+    <bean name="PersonaController" class="Controller.PersonaController"/> 
+    <bean name="ProductoController" class="Controller.ProductoController"/>  
+    <bean name="PedidoController" class="Controller.PedidoController"/>  
 </beans>
