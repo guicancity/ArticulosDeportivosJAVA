@@ -51,4 +51,19 @@ public class PersonaController {
         personaBL.eliminar(id);
         return new ModelAndView("redirect:/persona.txt"); 
     }
+    
+         @RequestMapping(value="editarPersona.txt",method=RequestMethod.GET)
+    public ModelAndView Editar(HttpServletRequest request){
+        id=Integer.parseInt(request.getParameter("id"));
+        datos=personaBL.buscaDato(id);
+        mav.addObject("lsPersona",datos);
+        mav.setViewName("editarPersona");
+        return mav;
+    }
+    
+    @RequestMapping(value="editarPersona.txt",method=RequestMethod.POST)
+    public ModelAndView Editar(Persona p) {
+        personaBL.actualizar(p);
+        return new ModelAndView("redirect:/persona.txt");
+    }
 }

@@ -35,7 +35,7 @@ public class PersonaDL {
     }
     public void actualizar(Persona persona){
         String sql = "UPDATE persona SET Nombre1 = ?,Nombre2 = ?,Apellido1 = ?,Apellido2 = ?,Direccion = ?,Celular = ?,TipoDocumento = ?,NumeroDocumento = ?,FechaNacimiento = ? WHERE Id = ? ";
-         jdbctemplate.update(sql,persona.getNombre1(),persona.getNombre2(),persona.getApellido1(),persona.getApellido2(), persona.getDireccion(),persona.getDireccion(),persona.getCelular(),persona.getTipodocumento(), persona.getNumerodocumento(), persona.getFechanacimiento());
+         jdbctemplate.update(sql,persona.getNombre1(),persona.getNombre2(),persona.getApellido1(),persona.getApellido2(), persona.getDireccion(),persona.getCelular(),persona.getTipodocumento(), persona.getNumerodocumento(), persona.getFechanacimiento(), persona.getId());
     }
     public void eliminar(int id){
         try {
