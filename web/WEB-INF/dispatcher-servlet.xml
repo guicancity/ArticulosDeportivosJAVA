@@ -22,6 +22,8 @@
                 <prop key="index.txt">HomeController</prop>
                 <prop key="persona.txt">PersonaController</prop>
                 <prop key="insertaPersona.txt">PersonaController</prop>
+                <prop key="deletePersona.txt">PersonaController</prop>
+                <prop key="editarPersona.txt">PersonaController</prop>
                 
                 <prop key="producto.txt">ProductoController</prop>
                 <prop key="insertaProducto.txt">ProductoController</prop>

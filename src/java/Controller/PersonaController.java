@@ -8,6 +8,7 @@ package Controller;
 import Business.PersonaBL;
 import Model.Persona;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -42,5 +43,12 @@ public class PersonaController {
     public ModelAndView Agregar(Persona p){        
         personaBL.insertar(p);
         return new ModelAndView("redirect:/persona.txt");
+    }
+    
+    @RequestMapping("deletePersona.txt")
+    public ModelAndView Delete(HttpServletRequest request){
+        id=Integer.parseInt(request.getParameter("id"));
+        personaBL.eliminar(id);
+        return new ModelAndView("redirect:/persona.txt"); 
     }
 }
