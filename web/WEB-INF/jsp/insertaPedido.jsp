@@ -1,10 +1,11 @@
 <%-- 
-    Document   : editarPersona
-    Created on : 8/09/2020, 03:33:37 PM
-    Author     : JEISSON
+    Document   : insertaPedido
+    Created on : 16/09/2020, 10:02:39 AM
+    Author     : Xiomara
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +17,7 @@
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="bootstrap/estilos.css">
         <link rel="stylesheet" href="bootstrap/font-awesome/css/font-awesome.min.css">
-        <title> Articulos Deportivos || Editar Persona </title>
+        <title> Articulos Deportivos || Insertar Pedido </title>
     </head>
     <body>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -46,83 +47,49 @@
                 </ul>
             </div>
         </nav>
-
-
-
         <div class="container mt-4">
             <div class="row">
                 <div class="col-12">
                     <div class="row">
-                        <div class="col text-center"> <h1> Nuevo cliente</h1> </div>
+                        <div class="col text-center"> <h1> Nuevo pedido</h1> </div>
                     </div>
-                    <form method="POST">
+                    <form method="POST" >
                         <div class="row">
                             <div class="col-6">
-                                <h5>Primer nombre</h5>
-                                <input type="text" name="nombre1" required="" value="${lsPersona[0].nombre1}" class="form-control">
-                            </div>
-                            <div class="col-6">
-                                <h5> Segundo nombre</h5>
-                                <input type="text" name="nombre2" value="${lsPersona[0].nombre2}"  class="form-control">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-6">
-                                <h5>Primer apellido</h5>
-                                <input type="text" name="apellido1" required="" value="${lsPersona[0].apellido1}" class="form-control">
-                            </div>
-                            <div class="col-6">
-                                <h5> Segundo apellido </h5>
-                                <input type="text" name="apellido2" value="${lsPersona[0].apellido2}"  class="form-control">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-6">
-                                <h5>Dirección</h5>
-                                <input type="text" name="direccion" required="" value="${lsPersona[0].direccion}" class="form-control">
-                            </div>
-                            <div class="col-6">
-                                <h5>Celular</h5>
-                                <input type="number" name="celular" required="" value="${lsPersona[0].celular}" class="form-control">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-6">
-                                <h5>Tipo de documento</h5>
-                                <select name="tipodocumento" value="${lsPersona[0].tipoDocumento}" class="custom-select">
-                                    <option value="CEDULA">Cédula de ciudadanía</option>
-                                    <option value="TARJETAIDENTIDAD">Tarjeta de identidad</option>
-                                </select>
-                            </div>
-                            <div class="col-6">
-                                <h5>Numero de documento</h5>
-                                <input type="number" name="numerodocumento" required="" value="${lsPersona[0].numeroDocumento}" class="form-control"></div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-6">
-                                <h5>Fecha de nacimiento</h5>
-                                <input type="date" name="fechanacimiento" required="" value="${lsPersona[0].fechaNacimiento}" class="form-control">
-                            </div>
-                        </div>
+                                <h5> Cliente </h5>
+                                <select name="idPersona" class="form-control" required>
+                                    <c:forEach var="persona" items="${lsPersona}">
+                                        <option value="${persona.id}"> ${persona.nombre1} ${persona.nombre2} ${persona.apellido1} ${persona.apellido2}</option>   
+                                    </c:forEach>
+                                </select> 
 
-
-
+                            </div>
+                            <div class="col-6">
+                                <h5>Fecha Entrega</h5>
+                                <input type="date" name="fechaEntrega" required="" class="form-control"> 
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <h5> Observaciones </h5>
+                                <textarea name="observaciones" class="form-control"> </textarea> 
+                            </div>
+                            <div class="col-6">
+                                <h5>Imagen</h5>
+                                <input type="file" name="imagen" class="form-control"> 
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col text-center my-4">
-                                <input type="submit" value="Actualizar" id="Actualizar" class="btn btn-info" >
+                                <input type="submit" value="Agregar" class="btn btn-success" >
                             </div>
-                        </div>
-
+                        </div>           
 
                     </form>
                 </div>
             </div>
         </div>
-
 
         <footer class="footer text-center p-4" style="background: black">
             <div class="container">
@@ -148,12 +115,3 @@
         </footer>
     </body>
 </html>
-<script>
- $(document).ready(function(){
-  $("#Actualizar").on("click",function()
-  {
-   alert('Actualizado con éxito');
-  });
-
-});
-</script>

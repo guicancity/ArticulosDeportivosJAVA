@@ -20,6 +20,7 @@
         <property name="mappings">
             <props>
                 <prop key="index.txt">HomeController</prop>
+                
                 <prop key="persona.txt">PersonaController</prop>
                 <prop key="insertaPersona.txt">PersonaController</prop>
                 <prop key="deletePersona.txt">PersonaController</prop>
@@ -29,8 +30,9 @@
                 <prop key="insertaProducto.txt">ProductoController</prop>
                 <prop key="deleteProducto.txt">ProductoController</prop>
                 <prop key="editarProducto.txt">ProductoController</prop>
-                <prop key="pedido.txt">PedidoController</prop>
                 
+                <prop key="pedido.txt">PedidoController</prop>
+                <prop key="insertaPedido.txt">PedidoController</prop>
             </props>
         </property>
     </bean>

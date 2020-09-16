@@ -11,7 +11,7 @@ package Model;
  */
 public class Pedido {
     private int id, idPersona;
-    private String fechaHora, observaciones, imagenes; 
+    private String fechaEntrega, observaciones, imagen; 
 
     public int getId() {
         return id;
@@ -29,12 +29,12 @@ public class Pedido {
         this.idPersona = idPersona;
     }
 
-    public String getFechaHora() {
-        return fechaHora;
+    public String getFechaEntrega() {
+        return fechaEntrega;
     }
 
-    public void setFechaHora(String fechaHora) {
-        this.fechaHora = fechaHora;
+    public void setFechaEntrega(String fechaEntrega) {
+        this.fechaEntrega = fechaEntrega;
     }
 
     public String getObservaciones() {
@@ -45,14 +45,13 @@ public class Pedido {
         this.observaciones = observaciones;
     }
 
-    public String getImagenes() {
-        return imagenes;
+    public String getImagen() {
+        return imagen;
     }
 
-    public void setImagenes(String imagenes) {
-        this.imagenes = imagenes;
-    }
-    
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }  
     
     
 }

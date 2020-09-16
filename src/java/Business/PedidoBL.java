@@ -6,6 +6,7 @@
 package Business;
 
 import Data.PedidoDL;
+import Model.Pedido;
 import java.util.List;
 
 /**
@@ -17,6 +18,10 @@ public class PedidoBL {
     
     public List listar(){
         return pedidoDL.listar();      
+    }
+    
+     public void insertar(Pedido p){
+         pedidoDL.insertar(p);
     }
    
    

@@ -66,7 +66,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <h5> Descripción </h5>
-                                <input type="text" name="descripcion" required class="form-control">
+                                <input type="text" name="descripcion" class="form-control">
                             </div>
                             <div class="col-6">
                                 <h5>Valor</h5>

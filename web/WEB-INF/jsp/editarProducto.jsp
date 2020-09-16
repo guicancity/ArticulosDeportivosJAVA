@@ -68,7 +68,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <h5> Descripción </h5>
-                                <input type="text" name="descripcion" required class="form-control" value="${lsProductos[0].descripcion}">
+                                <input type="text" name="descripcion"  class="form-control" value="${lsProductos[0].descripcion}">
                             </div>
                             <div class="col-6">
                                 <h5>Valor</h5>
