@@ -47,21 +47,6 @@ public class PedidoController {
         pedidoBL.insertar(p);
         return new ModelAndView("redirect:/pedido.txt");
     }
-    
-     @RequestMapping(value="editarPersona.txt",method=RequestMethod.GET)
-    public ModelAndView Editar(HttpServletRequest request){
-        id=Integer.parseInt(request.getParameter("id"));
-        datos=personaBL.buscaDato(id);
-        mav.addObject("lsPersona",datos);
-        mav.setViewName("editarPersona");
-        return mav;
-    }
-    
-    @RequestMapping(value="editarPersona.txt",method=RequestMethod.POST)
-    public ModelAndView Editar(Pedido p) {
-       // personaBL.actualizar(p);
-        return new ModelAndView("redirect:/pedido.txt");
-    }
 }
     
     
