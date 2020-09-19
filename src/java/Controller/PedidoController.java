@@ -9,6 +9,7 @@ import Business.PedidoBL;
 import Business.PersonaBL;
 import Model.Pedido;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -44,6 +45,21 @@ public class PedidoController {
     @RequestMapping(value="insertaPedido.txt",method=RequestMethod.POST)
     public ModelAndView Agregar(Pedido p){        
         pedidoBL.insertar(p);
+        return new ModelAndView("redirect:/pedido.txt");
+    }
+    
+     @RequestMapping(value="editarPersona.txt",method=RequestMethod.GET)
+    public ModelAndView Editar(HttpServletRequest request){
+        id=Integer.parseInt(request.getParameter("id"));
+        datos=personaBL.buscaDato(id);
+        mav.addObject("lsPersona",datos);
+        mav.setViewName("editarPersona");
+        return mav;
+    }
+    
+    @RequestMapping(value="editarPersona.txt",method=RequestMethod.POST)
+    public ModelAndView Editar(Pedido p) {
+       // personaBL.actualizar(p);
         return new ModelAndView("redirect:/pedido.txt");
     }
 }

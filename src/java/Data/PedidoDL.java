@@ -28,4 +28,10 @@ public class PedidoDL {
         String sql="INSERT INTO pedido (IdPersona, FechaEntrega, Observaciones, Imagen) VALUES (?,?,?,?)";
         jdbctemplate.update(sql, p.getIdPersona(), p.getFechaEntrega(), p.getObservaciones(), p.getImagen());
     }
+     
+     
+    public void buscarid(Pedido p){
+        String sql="INSERT INTO pedido (IdPersona, FechaEntrega, Observaciones, Imagen) VALUES (?,?,?,?)";
+        jdbctemplate.update(sql, p.getIdPersona(), p.getFechaEntrega(), p.getObservaciones(), p.getImagen());
+    }
 }
