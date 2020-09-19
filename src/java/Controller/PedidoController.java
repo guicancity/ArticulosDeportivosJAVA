@@ -26,7 +26,7 @@ public class PedidoController {
     List datos;
     
     @RequestMapping("pedido.txt")
-    public ModelAndView Listra(){
+    public ModelAndView Lista(){
         datos = pedidoBL.listar();
         mav.addObject("lspedido", datos);
         mav.setViewName("indexPedido");

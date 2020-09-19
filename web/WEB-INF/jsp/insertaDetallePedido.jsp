@@ -1,17 +1,13 @@
 <%-- 
-    Document   : EditarPedido
-    Created on : 19/09/2020, 11:53:00 AM
+    Document   : insertaDetallePedido
+    Created on : 19/09/2020, 01:54:16 PM
     Author     : JEISSON
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <head>
+  <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="bootstrap/js/jquery-3.4.1.js"></script>
@@ -20,7 +16,7 @@
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="bootstrap/estilos.css">
         <link rel="stylesheet" href="bootstrap/font-awesome/css/font-awesome.min.css">
-        <title> Articulos Deportivos || Insertar Pedido </title>
+        <title> Articulos Deportivos || Insertar detalles </title>
     </head>
     <body>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -60,9 +56,9 @@
                         <div class="row">
                             <div class="col-6">
                                 <h5> Cliente </h5>
-                                <select name="idPersona" class="form-control" required>
-                                    <c:forEach var="persona" items="${lsPersona}">
-                                        <option value="${persona.id}"> ${persona.nombre1} ${persona.nombre2} ${persona.apellido1} ${persona.apellido2}</option>   
+                                <select name="idproducto" class="form-control" required>
+                                    <c:forEach var="productos" items="${lsProductos}">
+                                        <option value="${productos.id}"> ${productos.nombre}}</option>   
                                     </c:forEach>
                                 </select> 
 

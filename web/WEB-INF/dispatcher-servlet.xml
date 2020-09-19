@@ -33,7 +33,11 @@
                 
                 <prop key="pedido.txt">PedidoController</prop>
                 <prop key="insertaPedido.txt">PedidoController</prop>
-                <prop key="editarPedido.txt">PedidoController</prop>
+                <!--<prop key="editarPedido.txt">PedidoController</prop>-->
+                
+                
+                <prop key="detallePedido.txt">DetallePedidoController</prop>         
+                
             </props>
         </property>
     </bean>
@@ -54,4 +58,5 @@
     <bean name="PersonaController" class="Controller.PersonaController"/> 
     <bean name="ProductoController" class="Controller.ProductoController"/>  
     <bean name="PedidoController" class="Controller.PedidoController"/>  
+    <bean name="DetallePedidoController" class="Controller.DetallePedidoController"/>
 </beans>

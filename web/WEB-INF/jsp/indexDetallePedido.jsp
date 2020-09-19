@@ -1,7 +1,7 @@
 <%-- 
-    Document   : indexPedido
-    Created on : 15/09/2020, 10:41:23 AM
-    Author     : Xiomara
+    Document   : EditarPedido
+    Created on : 19/09/2020, 11:53:00 AM
+    Author     : JEISSON
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -54,28 +54,25 @@
             <table class="table table-hover">
                 <thead class="thead-light">
                     <tr>                               
-                        <th>Cliente</th>                               
-                        <th>Fecha Entrega</th>
-                        <th>Observaciones</th>
-                        <th>Imagen</th>
-                        <th colspan="3" class="text-center">Acciones</th>
+                        <th>Producto</th>                               
+                        <th>Cantidad</th>
+                        <th>Precio venta</th>
+                        <th>Total</th>
+                        <th colspan="2" class="text-center">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach var="pedidos" items="${lspedido}">
+                    <c:forEach var="detallePedidos" items="${lsDetallePedido}">
                         <tr>                               
-                            <td>${pedidos.idPersona} ${pedidos.idPersona1} ${pedidos.idPersona2} ${pedidos.idPersona3}</td>
-                            <td>${pedidos.fechaEntrega}</td> 
-                            <td>${pedidos.observaciones}</td> 
-                            <td>${pedidos.imagen}</td> 
+                            <td>${detallePedidos.Nombre}</td>
+                            <td>${detallePedidos.cantidad}</td> 
+                            <td>${detallePedidos.precioVenta}</td> 
+                            <td>${detallePedidos.total}</td> 
                             <td>
-                                <a href="detallePedido.txt?id=${pedidos.id}" class="btn btn-outline-success fa fa-cart-plus fa-2x"> </a>
+                                <a href="detallePedido.txt?id=${detallePedidos.id}" class="btn btn-outline-info fa fa-edit fa-2x"> </a>
                             </td>
                             <td>
-                                <a href="editarPedido.txt?id=${pedidos.id}" class="btn btn-outline-info fa fa-edit fa-2x"> </a>
-                            </td>
-                            <td>
-                                <a onclick="return confirm('¿Esta seguro?');" href="deletePedido.txt?id=${pedidos.id}" class="btn btn-outline-danger fa fa-trash fa-2x"> </a>
+                                <a onclick="return confirm('¿Esta seguro?');" href="deletePedido.txt?id=${detallePedidos.id}" class="btn btn-outline-danger fa fa-trash fa-2x"> </a>
                             </td>
                         </tr>
                     </c:forEach>
@@ -107,3 +104,4 @@
         </footer>
     </body>
 </html>
+
