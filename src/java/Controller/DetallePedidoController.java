@@ -18,43 +18,46 @@ import org.springframework.web.servlet.ModelAndView;
  * @author JEISSON
  */
 public class DetallePedidoController {
-     ModelAndView mav=new ModelAndView();
+
+    ModelAndView mav = new ModelAndView();
     ProductoBL productoBL = new ProductoBL();
     DetallePedidoBL detallePedidoBL = new DetallePedidoBL();
     int id;
     List datos;
-    
-    
-    
-    
-    
+
     @RequestMapping("detallePedido.txt")
-    public ModelAndView Lista(HttpServletRequest request){
-        id=Integer.parseInt(request.getParameter("id"));
+    public ModelAndView Lista(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
         datos = detallePedidoBL.listar(id);
         mav.addObject("lsDetallePedido", datos);
         mav.setViewName("indexDetallePedido");
         return mav;
-}
+    }
+
     /*@RequestMapping(value="editarPersona.txt",method=RequestMethod.POST)
     public ModelAndView Lista(DetallePedido dp) {
         personaBL.actualizar(dp);
         return new ModelAndView("redirect:/persona.txt");
     }*/
-    
-    
-    @RequestMapping(value="insertaDetallePedido.txt",method=RequestMethod.GET)
-    public ModelAndView Agregar(){
+
+    @RequestMapping(value = "insertaDetallePedido.txt", method = RequestMethod.GET)
+    public ModelAndView Agregar() {
         mav.addObject(new DetallePedido());
-        datos =  productoBL.listar();
+        datos = productoBL.listar();
         mav.addObject("lsProductos", datos);
         mav.setViewName("insertaDetallePedido");
         return mav;
     }
-    
-    @RequestMapping(value="insertaPedido.txt",method=RequestMethod.POST)
-    public ModelAndView Agregar(DetallePedido dp){        
-//
+
+    @RequestMapping(value = "insertaDetallePedido.txt", method = RequestMethod.POST)
+    public ModelAndView Agregar(HttpServletRequest request, DetallePedido dp) {
+       int cantidad = Integer.parseInt(request.getParameter("cantidad"));
+       int total = cantidad * 50;
+       dp.setIdPedido(Integer.parseInt(request.getParameter("id")));
+       dp.setCantidad(cantidad);
+       dp.setPrecioventa(4);
+       dp.setTotal(total);
+        detallePedidoBL.insertar(dp);
         return new ModelAndView("redirect:/pedido.txt");
     }
 }

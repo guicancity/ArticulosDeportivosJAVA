@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="bootstrap/estilos.css">
         <link rel="stylesheet" href="bootstrap/font-awesome/css/font-awesome.min.css">
-        <title> Articulos Deportivos || Pedido </title>
+        <title> Articulos Deportivos || Detalle pedido </title>
     </head>
     <body>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -47,9 +47,16 @@
                 </ul>
             </div>
         </nav>
+        
+        
+        
+        
         <div class="container pt-3">
-            <a href="insertaPedido.txt" class="btn btn-success"> Nuevo Registro </a>
-            <h1 class="text-center"> Pedidos </h1>
+            <%
+            int i = Integer.parseInt(request.getParameter("id"));
+            %>
+            <a href="insertaDetallePedido.txt?id=<%=i%>" class="btn btn-success"> Nuevo artículo </a>
+            <h1 class="text-center"> Artículos seleccionados </h1>
             <br>
             <table class="table table-hover">
                 <thead class="thead-light">
@@ -69,7 +76,7 @@
                             <td>${detallePedidos.precioVenta}</td> 
                             <td>${detallePedidos.total}</td> 
                             <td>
-                                <a href="detallePedido.txt?id=${detallePedidos.id}" class="btn btn-outline-info fa fa-edit fa-2x"> </a>
+                                <a href="insertaDetallePedido.txt?id=${detallePedidos.id}" class="btn btn-outline-info fa fa-edit fa-2x"> </a>
                             </td>
                             <td>
                                 <a onclick="return confirm('¿Esta seguro?');" href="deletePedido.txt?id=${detallePedidos.id}" class="btn btn-outline-danger fa fa-trash fa-2x"> </a>

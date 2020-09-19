@@ -1,13 +1,14 @@
 <%-- 
-    Document   : insertaDetallePedido
-    Created on : 19/09/2020, 01:54:16 PM
+    Document   : insertarDetallePedido
+    Created on : 19/09/2020, 03:18:56 PM
     Author     : JEISSON
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
 <html>
-  <head>
+    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="bootstrap/js/jquery-3.4.1.js"></script>
@@ -16,7 +17,7 @@
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="bootstrap/estilos.css">
         <link rel="stylesheet" href="bootstrap/font-awesome/css/font-awesome.min.css">
-        <title> Articulos Deportivos || Insertar detalles </title>
+        <title> Articulos Deportivos || Agregar producto </title>
     </head>
     <body>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -50,35 +51,24 @@
             <div class="row">
                 <div class="col-12">
                     <div class="row">
-                        <div class="col text-center"> <h1> Nuevo pedido</h1> </div>
+                        <div class="col text-center"> <h1> Detalle pedidos</h1> </div>
                     </div>
                     <form method="POST" >
                         <div class="row">
                             <div class="col-6">
-                                <h5> Cliente </h5>
-                                <select name="idproducto" class="form-control" required>
-                                    <c:forEach var="productos" items="${lsProductos}">
-                                        <option value="${productos.id}"> ${productos.nombre}}</option>   
+                                <h5> Producto </h5>
+                                <select name="idProducto" class="form-control" required>
+                                    <c:forEach var="producto" items="${lsProductos}">
+                                        <option value="${producto.id}"> ${producto.Nombre}</option>   
                                     </c:forEach>
                                 </select> 
-
                             </div>
                             <div class="col-6">
-                                <h5>Fecha Entrega</h5>
-                                <input type="date" name="fechaEntrega" required="" class="form-control"> 
+                                <h5>Cantidad</h5>
+                                <input type="number" name="cantidad" required="" class="form-control"> 
                             </div>
                         </div>
                         <br>
-                        <div class="row">
-                            <div class="col-6">
-                                <h5> Observaciones </h5>
-                                <textarea name="observaciones" class="form-control"> </textarea> 
-                            </div>
-                            <div class="col-6">
-                                <h5>Imagen</h5>
-                                <input type="file" name="imagen" class="form-control"> 
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="col text-center my-4">
                                 <input type="submit" value="Agregar" class="btn btn-success" >
