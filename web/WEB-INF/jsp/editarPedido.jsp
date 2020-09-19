@@ -1,11 +1,10 @@
 <%-- 
-    Document   : EditarPedido
-    Created on : 19/09/2020, 11:53:00 AM
-    Author     : JEISSON
+    Document   : editarPedido
+    Created on : 19/09/2020, 06:31:47 PM
+    Author     : Xiomara
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,7 +16,7 @@
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="bootstrap/estilos.css">
         <link rel="stylesheet" href="bootstrap/font-awesome/css/font-awesome.min.css">
-        <title> Articulos Deportivos || Detalle pedido </title>
+        <title> Articulos Deportivos || Editar Pedido </title>
     </head>
     <body>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -50,42 +49,35 @@
 
 
 
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col text-center"> <h1> Actualizar Pedido </h1> </div>
+                    </div>
+                    <form method="POST" >
+                        <div class="row">
+                            <div class="col-6">
+                                <h5>Fecha Entrega</h5>
+                                <input type="date" name="fechaEntrega" required="" class="form-control" value="${lspedido[0].fechaEntrega}"> 
+                            </div>
+                            <div class="col-6">
+                                <h5> Observaciones </h5>
+                                <textarea name="observaciones" class="form-control"> ${lspedido[0].observaciones} </textarea> 
+                            </div>        
+                        </div>
+                        <div class="row">
+                            <div class="col text-center my-4">
+                                <input type="submit" value="Actualizar" id="Actualizar" class="btn btn-info" >
+                            </div>
+                        </div>
 
-        <div class="container pt-3">
-            <%
-                int i = Integer.parseInt(request.getParameter("id"));
-            %>
-            <a href="insertaDetallePedido.txt?id=<%=i%>" class="btn btn-success"> Nuevo artículo </a>
-            <h1 class="text-center"> Artículos seleccionados </h1>
-            <br>
-            <table class="table table-hover">
-                <thead class="thead-light">
-                    <tr>                               
-                        <th>Producto</th>                               
-                        <th>Cantidad</th>
-                        <th>Precio venta</th>
-                        <th>Total</th>
-                        <th colspan="2" class="text-center">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach var="detallePedidos" items="${lsDetallePedido}">
-                        <tr>                               
-                            <td>${detallePedidos.Nombre}</td>
-                            <td>${detallePedidos.cantidad}</td> 
-                            <td>${detallePedidos.precioVenta}</td> 
-                            <td>${detallePedidos.total}</td> 
-                            <td>
-                                <a href="editaDetallePedido.txt?id=${detallePedidos.id}" class="btn btn-outline-info fa fa-edit fa-2x"> </a>
-                            </td>
-                            <td>
-                                <a onclick="return confirm('¿Esta seguro?');" href="deleteDetallePedido.txt?id=${detallePedidos.id}" class="btn btn-outline-danger fa fa-trash fa-2x"> </a>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
+
+                    </form>
+                </div>
+            </div>
         </div>
+
 
         <footer class="footer text-center p-4" style="background: black">
             <div class="container">
@@ -111,4 +103,3 @@
         </footer>
     </body>
 </html>
-

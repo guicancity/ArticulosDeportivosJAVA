@@ -23,4 +23,15 @@ public class DetallePedidoBL {
        detallePedidoDL.insertar(dp);
     }
     
+    public List buscar(int id){
+        return detallePedidoDL.buscar(id);
+    }
+    public void actualizar(DetallePedido dp){
+        detallePedidoDL.actualizar(dp);
+    }
+    public void eliminar(int i){
+        detallePedidoDL.eliminar(i);
+        
+    }
+    
 }

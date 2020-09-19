@@ -23,6 +23,12 @@ public class PedidoBL {
      public void insertar(Pedido p){
          pedidoDL.insertar(p);
     }
-   
+    
+     public List buscar(int id){
+        return pedidoDL.buscar(id);
+    }
+    public void actualizar(Pedido p){
+        pedidoDL.actualizar(p);
+    }
    
 }

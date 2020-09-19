@@ -34,4 +34,15 @@ public class PedidoDL {
         String sql="INSERT INTO pedido (IdPersona, FechaEntrega, Observaciones, Imagen) VALUES (?,?,?,?)";
         jdbctemplate.update(sql, p.getIdPersona(), p.getFechaEntrega(), p.getObservaciones(), p.getImagen());
     }
+    
+        public List buscar(int id) {
+        String sql = "SELECT * FROM pedido WHERE Id=" + id;
+        datos = jdbctemplate.queryForList(sql);
+        return datos;
+    }
+    
+    public void actualizar(Pedido p){
+        String sql="UPDATE pedido SET FechaEntrega=?, Observaciones=?  WHERE Id=?";
+        jdbctemplate.update(sql, p.getFechaEntrega(), p.getObservaciones(), p.getId());     
+    }
 }

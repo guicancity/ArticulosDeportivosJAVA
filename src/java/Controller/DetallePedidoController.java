@@ -34,12 +34,6 @@ public class DetallePedidoController {
         return mav;
     }
 
-    /*@RequestMapping(value="editarPersona.txt",method=RequestMethod.POST)
-    public ModelAndView Lista(DetallePedido dp) {
-        personaBL.actualizar(dp);
-        return new ModelAndView("redirect:/persona.txt");
-    }*/
-
     @RequestMapping(value = "insertaDetallePedido.txt", method = RequestMethod.GET)
     public ModelAndView Agregar() {
         mav.addObject(new DetallePedido());
@@ -51,13 +45,35 @@ public class DetallePedidoController {
 
     @RequestMapping(value = "insertaDetallePedido.txt", method = RequestMethod.POST)
     public ModelAndView Agregar(HttpServletRequest request, DetallePedido dp) {
-       int cantidad = Integer.parseInt(request.getParameter("cantidad"));
-       int total = cantidad * 50;
-       dp.setIdPedido(Integer.parseInt(request.getParameter("id")));
-       dp.setCantidad(cantidad);
-       dp.setPrecioventa(4);
-       dp.setTotal(total);
+        int cantidad = Integer.parseInt(request.getParameter("cantidad"));
+        int total = cantidad * 50;
+        dp.setIdPedido(Integer.parseInt(request.getParameter("id")));
+        dp.setCantidad(cantidad);
+        dp.setPrecioventa(4);
+        dp.setTotal(total);
         detallePedidoBL.insertar(dp);
+        return new ModelAndView("redirect:/pedido.txt");
+    }
+
+    @RequestMapping("deleteDetallePedido.txt")
+    public ModelAndView Delete(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
+        detallePedidoBL.eliminar(id);
+        return new ModelAndView("redirect:/pedido.txt");
+    }
+    
+     @RequestMapping(value="editaDetallePedido.txt",method=RequestMethod.GET)
+    public ModelAndView Editar(HttpServletRequest request){
+        id=Integer.parseInt(request.getParameter("id"));
+        datos=detallePedidoBL.buscar(id);
+        mav.addObject("lsDetallePedido",datos);
+        mav.setViewName("editaDetallePedido");
+        return mav;
+    }
+    
+    @RequestMapping(value="editaDetallePedido.txt",method=RequestMethod.POST)
+    public ModelAndView Editar(DetallePedido dp) {
+        detallePedidoBL.actualizar(dp);
         return new ModelAndView("redirect:/pedido.txt");
     }
 }

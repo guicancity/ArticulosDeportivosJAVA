@@ -5,7 +5,6 @@
  */
 package Controller;
 
-
 import Business.ProductoBL;
 import Model.Producto;
 import java.util.List;
@@ -19,52 +18,53 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Xiomara
  */
 public class ProductoController {
-    ModelAndView mav= new ModelAndView();
-    ProductoBL productobl= new ProductoBL();
+
+    ModelAndView mav = new ModelAndView();
+    ProductoBL productobl = new ProductoBL();
     int id;
     List datos;
-    
+
     @RequestMapping("producto.txt")
-    public ModelAndView Listar(){
-        datos=productobl.listar();
-        mav.addObject("lsProductos",datos);
+    public ModelAndView Listar() {
+        datos = productobl.listar();
+        mav.addObject("lsProductos", datos);
         mav.setViewName("indexProducto");
         return mav;
     }
-    
-    @RequestMapping(value="insertaProducto.txt",method=RequestMethod.GET)
-    public ModelAndView Agregar(){
+
+    @RequestMapping(value = "insertaProducto.txt", method = RequestMethod.GET)
+    public ModelAndView Agregar() {
         mav.addObject(new Producto());
         mav.setViewName("insertaProducto");
         return mav;
     }
-    
-    @RequestMapping(value="insertaProducto.txt",method=RequestMethod.POST)
-    public ModelAndView Agregar(Producto p){        
+
+    @RequestMapping(value = "insertaProducto.txt", method = RequestMethod.POST)
+    public ModelAndView Agregar(Producto p) {
         productobl.insertar(p);
         return new ModelAndView("redirect:/producto.txt");
     }
-    
-        @RequestMapping(value="editarProducto.txt",method=RequestMethod.GET)
-    public ModelAndView Editar(HttpServletRequest request){
-        id=Integer.parseInt(request.getParameter("id"));
-        datos=productobl.buscar(id);
-        mav.addObject("lsProductos",datos);
+
+    @RequestMapping(value = "editarProducto.txt", method = RequestMethod.GET)
+    public ModelAndView Editar(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
+        datos = productobl.buscar(id);
+        mav.addObject("lsProductos", datos);
         mav.setViewName("editarProducto");
         return mav;
     }
-    
-    @RequestMapping(value="editarProducto.txt",method=RequestMethod.POST)
+
+    @RequestMapping(value = "editarProducto.txt", method = RequestMethod.POST)
     public ModelAndView Editar(Producto p) {
         productobl.actualizar(p);
         return new ModelAndView("redirect:/producto.txt");
     }
-    
+
     @RequestMapping("deleteProducto.txt")
-    public ModelAndView Delete(HttpServletRequest request){
-        id=Integer.parseInt(request.getParameter("id"));
+    public ModelAndView Delete(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
         productobl.eliminar(id);
-        return new ModelAndView("redirect:/producto.txt"); 
+        return new ModelAndView("redirect:/producto.txt");
     }
-    
+
 }

@@ -33,12 +33,13 @@
                 
                 <prop key="pedido.txt">PedidoController</prop>
                 <prop key="insertaPedido.txt">PedidoController</prop>
-                <!--<prop key="editarPedido.txt">PedidoController</prop>-->
+                <prop key="editarPedido.txt">PedidoController</prop>
                 
                 
                 <prop key="detallePedido.txt">DetallePedidoController</prop>         
                 <prop key="insertaDetallePedido.txt">DetallePedidoController</prop>
-                
+                <prop key="deleteDetallePedido.txt">DetallePedidoController</prop>
+                <prop key="editaDetallePedido.txt">DetallePedidoController</prop>
             </props>
         </property>
     </bean>

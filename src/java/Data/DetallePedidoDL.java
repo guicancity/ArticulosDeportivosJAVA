@@ -33,25 +33,25 @@ public class DetallePedidoDL {
         }
         
     }
-    /*public int valorProducto(int idProducto){
-        String sql = "SELECT PrecioVenta from producto WHERE id = " + idProducto;
-        
+    
+    public List buscar(int id) {
+        String sql = "SELECT * FROM detallepedido WHERE Id=" + id;
+        datos = jdbctemplate.queryForList(sql);
+        return datos;
     }
-    */
-     /*public void actualizar(DetallePedido dp){
-        String sql = "UPDATE persona SET Nombre1 = ?,Nombre2 = ?,Apellido1 = ?,Apellido2 = ?,Direccion = ?,Celular = ?,TipoDocumento = ?,NumeroDocumento = ?,FechaNacimiento = ? WHERE Id = ? ";
-         jdbctemplate.update(sql,persona.getNombre1(),persona.getNombre2(),persona.getApellido1(),persona.getApellido2(), persona.getDireccion(),persona.getCelular(),persona.getTipodocumento(), persona.getNumerodocumento(), persona.getFechanacimiento(), persona.getId());
+    
+    public void actualizar(DetallePedido dp){
+        String sql="UPDATE detallepedido SET Cantidad=? WHERE Id=?";
+        jdbctemplate.update(sql, dp.getCantidad(), dp.getId());     
     }
+  
     public void eliminar(int id){
         try {
-             String sql = "DELETE FROM persona WHERE Id =" + id;
+            String sql = "DELETE FROM detallepedido WHERE Id =" + id;
         this.jdbctemplate.update(sql);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-       
-        
+           
     }
- */
-    
 }
