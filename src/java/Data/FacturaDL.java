@@ -18,7 +18,7 @@ public class FacturaDL {
     List datos;
     
     public List listar(){
-        String sql = "";
+        String sql = "SELECT factura.*,pedido.IdPersona, pedido.FechaEntrega, pedido.Observaciones FROM factura INNER JOIN pedido ON factura.IdPedido=pedido.Id";
         datos = jdbctemplate.queryForList(sql);
         return datos;
     }
