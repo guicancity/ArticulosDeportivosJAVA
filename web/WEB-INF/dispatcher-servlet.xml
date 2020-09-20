@@ -40,6 +40,9 @@
                 <prop key="insertaDetallePedido.txt">DetallePedidoController</prop>
                 <prop key="deleteDetallePedido.txt">DetallePedidoController</prop>
                 <prop key="editaDetallePedido.txt">DetallePedidoController</prop>
+                
+                <prop key="factura.txt">FacturaController</prop>
+             
             </props>
         </property>
     </bean>
@@ -61,4 +64,5 @@
     <bean name="ProductoController" class="Controller.ProductoController"/>  
     <bean name="PedidoController" class="Controller.PedidoController"/>  
     <bean name="DetallePedidoController" class="Controller.DetallePedidoController"/>
+    <bean name="FacturaController" class="Controller.FacturaController"/>
 </beans>
