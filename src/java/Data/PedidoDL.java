@@ -19,7 +19,7 @@ public class PedidoDL {
     List datos;
     
     public List listar(){
-        String sql = "SELECT p.*, pe.nombre1 as idPersona, pe.nombre2 as idPersona1,pe.apellido1 as idPersona2,pe.apellido2 as idPersona3 FROM pedido p, persona pe WHERE p.idPersona=pe.id";
+        String sql = "SELECT p.*, pe.nombre1 as idPersona, pe.nombre2 as idPersona1,pe.apellido1 as idPersona2,pe.apellido2 as idPersona3 FROM pedido p, persona pe WHERE p.idPersona=pe.id ORDER BY p.id desc";
         datos = jdbctemplate.queryForList(sql);
         return datos;
     }
