@@ -20,7 +20,12 @@ public class DetallePedidoDL {
     List datos;
     
      public List listar( int id){
-        String sql = "SELECT dp.Id,p.Nombre,dp.Cantidad,dp.PrecioVenta,dp.Total FROM detallepedido dp inner join producto p on p.Id = dp.IdProducto WHERE IdPedido = " + id;
+        String sql = "SELECT dp.Id,p.Nombre,dp.Cantidad,dp.PrecioVenta,dp.Total FROM detallepedido dp inner join producto p on p.Id = dp.IdProducto WHERE IdPedido = " + id +" ORDER BY dp.Id desc";
+        datos = jdbctemplate.queryForList(sql);
+        return datos;
+    }
+     public List valorProducto( int id){
+        String sql = "SELECT valor from producto where id = "+ id;
         datos = jdbctemplate.queryForList(sql);
         return datos;
     }

@@ -76,11 +76,12 @@
                                 <textarea name="observaciones" class="form-control"> </textarea> 
                             </div>
                             <div class="col-6">
-                                <h5>Imagen</h5>
-                                <input type="file" name="imagen" class="form-control"> 
+                                <!--<h5 >Imagen</h5>-->
+                                <input type="hidden" name="imagen" value="algo.png" class="form-control"> 
                             </div>
                         </div>
                         <div class="row">
+                            
                             <div class="col text-center my-4">
                                 <input type="submit" value="Agregar" class="btn btn-success" >
                             </div>

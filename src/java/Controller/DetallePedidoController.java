@@ -47,14 +47,17 @@ public class DetallePedidoController {
     public ModelAndView Agregar(HttpServletRequest request, DetallePedido dp) {
         int cantidad = Integer.parseInt(request.getParameter("cantidad"));
         int idProducto = Integer.parseInt( request.getParameter("idProducto"));
-        int total = cantidad * 50;
-        dp.setIdPedido(Integer.parseInt(request.getParameter("id")));
+        int id = Integer.parseInt( request.getParameter("id"));
+         List precio =  detallePedidoBL.valorProducto(idProducto);
+       String precioProducto = precio.get(0).toString();
+        int total = cantidad * 4;
+        dp.setIdPedido(id);
         dp.setCantidad(cantidad);
         dp.setPrecioventa(4);
         dp.setTotal(total);
-     //   int precio = detallePedidoBL.traevalor(idProducto);
+      
         detallePedidoBL.insertar(dp);
-        return new ModelAndView("redirect:/pedido.txt");
+        return new ModelAndView("redirect:/detallePedido.txt?id="+id);
     }
 
     @RequestMapping("deleteDetallePedido.txt")

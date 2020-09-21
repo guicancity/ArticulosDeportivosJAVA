@@ -59,8 +59,9 @@
                                 <h5> Producto </h5>
                                 <select name="idProducto" class="form-control" required>
                                     <c:forEach var="producto" items="${lsProductos}">
-                                        <option value="${producto.id}"> ${producto.Nombre}</option>   
+                                        <option value="${producto.id}"> ${producto.Nombre}</option>
                                     </c:forEach>
+                                       
                                 </select> 
                             </div>
                             <div class="col-6">

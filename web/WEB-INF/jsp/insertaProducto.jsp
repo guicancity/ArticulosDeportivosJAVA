@@ -16,17 +16,7 @@
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <script src="bootstrap/js/jquery.maskedinput.js"></script>
         
-        <title> Articulos Deportivos || Insertar Producto </title>
-    
-        <script type="text/javascript">
-    $(function() {
-        $.mask.definitions['~'] = "[+-]";
-        $("#nombre").mask("aaaaaaaaaaaaaaaaaaaa",{placeholder:"aaaaaaaa",completed:function(){alert("completado");}});
-        $("#fechanacimiento").mask("99/99/9999",{placeholder:"mm/dd/yyyy",completed:function(){alert("completado");}});
-        $("#phone").mask("99.999",{placeholder:"99.999"});
-        $("#dni").mask("99999999a");
-        });
-</script>   
+        <title> Articulos Deportivos || Insertar Producto </title> 
     </head>
     <body>
          <nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -82,7 +72,7 @@
                             </div>
                             <div class="col-6">
                                 <h5>Valor</h5>
-                                <input type="text" name="valor" required="" class="form-control"> 
+                                <input type="number" name="valor" required="" class="form-control"> 
                             </div>
                         </div>
                         <br>

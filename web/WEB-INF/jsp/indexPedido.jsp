@@ -57,7 +57,7 @@
                         <th>Cliente</th>                               
                         <th>Fecha Entrega</th>
                         <th>Observaciones</th>
-                        <th>Imagen</th>
+                        <!--<th>Imagen</th>-->
                         <th colspan="3" class="text-center">Acciones</th>
                     </tr>
                 </thead>
@@ -67,7 +67,7 @@
                             <td>${pedidos.idPersona} ${pedidos.idPersona1} ${pedidos.idPersona2} ${pedidos.idPersona3}</td>
                             <td>${pedidos.fechaEntrega}</td> 
                             <td>${pedidos.observaciones}</td> 
-                            <td>${pedidos.imagen}</td> 
+                           <!-- <td>${pedidos.imagen}</td> -->
                             <td>
                                 <a href="detallePedido.txt?id=${pedidos.id}" class="btn btn-outline-success fa fa-cart-plus fa-2x"> </a>
                             </td>

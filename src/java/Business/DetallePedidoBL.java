@@ -33,5 +33,8 @@ public class DetallePedidoBL {
         detallePedidoDL.eliminar(i);
         
     }
+    public List valorProducto(int id){
+       return detallePedidoDL.valorProducto(id);
+    }
     
 }
