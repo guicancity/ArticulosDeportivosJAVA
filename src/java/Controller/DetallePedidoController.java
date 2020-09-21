@@ -46,11 +46,13 @@ public class DetallePedidoController {
     @RequestMapping(value = "insertaDetallePedido.txt", method = RequestMethod.POST)
     public ModelAndView Agregar(HttpServletRequest request, DetallePedido dp) {
         int cantidad = Integer.parseInt(request.getParameter("cantidad"));
+        int idProducto = Integer.parseInt( request.getParameter("idProducto"));
         int total = cantidad * 50;
         dp.setIdPedido(Integer.parseInt(request.getParameter("id")));
         dp.setCantidad(cantidad);
         dp.setPrecioventa(4);
         dp.setTotal(total);
+     //   int precio = detallePedidoBL.traevalor(idProducto);
         detallePedidoBL.insertar(dp);
         return new ModelAndView("redirect:/pedido.txt");
     }

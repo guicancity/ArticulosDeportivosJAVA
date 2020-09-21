@@ -5,6 +5,8 @@
  */
 package Business;
 
+import Data.FacturaDL;
+import Model.Factura;
 import java.util.List;
 
 /**
@@ -13,10 +15,17 @@ import java.util.List;
  */
 public class FacturaBL {
     
-    FacturaBL facturaBL=new FacturaBL();
+    FacturaDL facturaDL=new FacturaDL();
     
     public List listar(){
-        return facturaBL.listar();
+        return facturaDL.listar();
+    }
+    
+      public List buscar(int id){
+        return facturaDL.buscar(id);
+    }
+    public void actualizar(Factura f){
+        facturaDL.actualizar(f);
     }
     
 }

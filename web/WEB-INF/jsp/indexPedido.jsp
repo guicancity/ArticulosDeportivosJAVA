@@ -75,7 +75,7 @@
                                 <a href="editarPedido.txt?id=${pedidos.id}" class="btn btn-outline-info fa fa-edit fa-2x"> </a>
                             </td>
                             <td>
-                                <a onclick="return confirm('¿Esta seguro?');" href="deletePedido.txt?id=${pedidos.id}" class="btn btn-outline-danger fa fa-trash fa-2x"> </a>
+                                <a onclick="return confirm('¿Desea facturar el pedido?');" href="factura.txt?id=${pedidos.id}" class="btn btn-outline-secondary fa fa-file fa-2x"> </a>
                             </td>
                         </tr>
                     </c:forEach>

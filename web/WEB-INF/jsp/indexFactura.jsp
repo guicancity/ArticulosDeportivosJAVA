@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -47,8 +48,7 @@
             </div>
         </nav>
         <div class="container pt-3">
-            <a href="insertaFactura.txt" class="btn btn-success"> Nuevo Registro </a>
-            <h1 class="text-center"> Pedidos </h1>
+            <h1 class="text-center"> Facturas generadas </h1>
             <br>
             <table class="table table-hover">
                 <thead class="thead-light">
@@ -56,20 +56,17 @@
                         <th>Cliente</th> 
                         <th>Fecha Entrega</th>
                         <th>Observaciones</th>
-                        <th>Estado</th>
-                        <th colspan="3" class="text-center">Acciones</th>
+                        <th class="text-center">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                 <c:forEach var="factura" items="${lsFactura}">
                     <tr>                               
-                        <td>${factura.idPedido} ${pedidos.idPersona1} ${pedidos.idPersona2} ${pedidos.idPersona3}</td>
-                        <td>${factura.estado}</td> 
+                        <td>${factura.nombre1}</td>
+                        <td>${factura.FechaEntrega}</td> 
+                        <td>${factura.observaciones}</td>
                         <td>
-                            <a href="editarFactura.txt?id=${factura.id}" class="btn btn-outline-info fa fa-edit fa-2x"> </a>
-                        </td>
-                        <td>
-                            <a onclick="return confirm('¿Esta seguro?');" href="deleteFactura.txt?id=${factura.id}" class="btn btn-outline-danger fa fa-trash fa-2x"> </a>
+                            <a onclick="return confirm('¿Desea ANULAR la facturar?');" href="deleteFactura.txt?id=${factura.idfactura}" class="btn btn-outline-danger fa fa-ban fa-2x"> </a>
                         </td>
                     </tr>
                 </c:forEach>

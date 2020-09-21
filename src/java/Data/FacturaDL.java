@@ -5,6 +5,7 @@
  */
 package Data;
 
+import Model.Factura;
 import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -18,9 +19,19 @@ public class FacturaDL {
     List datos;
     
     public List listar(){
-        String sql = "SELECT factura.*,pedido.IdPersona, pedido.FechaEntrega, pedido.Observaciones FROM factura INNER JOIN pedido ON factura.IdPedido=pedido.Id";
+        String sql = "SELECT f.id idfactura,f.estado, pe.Nombre1,  p.IdPersona, p.FechaEntrega, p.Observaciones FROM factura f INNER JOIN pedido p ON  f.IdPedido= p.Id INNER JOIN persona pe ON p.idPersona = pe.id";
         datos = jdbctemplate.queryForList(sql);
         return datos;
     }
     
+        public List buscar(int id) {
+        String sql = "SELECT * FROM factura WHERE Id=" + id;
+        datos = jdbctemplate.queryForList(sql);
+        return datos;
+    }
+    
+    public void actualizar(Factura f){
+        String sql="UPDATE factura SET Estado=?  WHERE Id=?";
+        jdbctemplate.update(sql, f.getEstado(), f.getId());     
+    }
 }
