@@ -60,6 +60,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                   <!-- 
+                    <c:forEach var="depto" items="${lsDeptos}">
+                        <c:if test="${depto.id!=editCiud[0].idDepto}">
+                            <option value="${depto.id}" >${depto.nombre}</option>                                     
+                        </c:if>
+                        <c:if test="${depto.id==editCiud[0].idDepto}">
+                            <option value="${depto.id}"  selected="true">${depto.nombre}</option>                                     
+                        </c:if>
+                    </c:forEach>
+                    
+                   --> 
+                    
                 <c:forEach var="factura" items="${lsFactura}">
                     <tr>                               
                         <td>${factura.nombre1}</td>
