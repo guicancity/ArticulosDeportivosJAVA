@@ -42,6 +42,7 @@
                 <prop key="editaDetallePedido.txt">DetallePedidoController</prop>
                 
                 <prop key="factura.txt">FacturaController</prop>
+                <prop key="editarEstadoFactura.txt">FacturaController</prop>
              
             </props>
         </property>

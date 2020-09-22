@@ -7,6 +7,7 @@ package Controller;
 
 import Business.*;
 import Model.DetallePedido;
+import java.sql.SQLException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,18 +45,18 @@ public class DetallePedidoController {
     }
 
     @RequestMapping(value = "insertaDetallePedido.txt", method = RequestMethod.POST)
-    public ModelAndView Agregar(HttpServletRequest request, DetallePedido dp) {
+    public ModelAndView Agregar(HttpServletRequest request, DetallePedido dp) throws SQLException {
         int cantidad = Integer.parseInt(request.getParameter("cantidad"));
         int idProducto = Integer.parseInt( request.getParameter("idProducto"));
         int id = Integer.parseInt( request.getParameter("id"));
-         List precio =  detallePedidoBL.valorProducto(idProducto);
-       String precioProducto = precio.get(0).toString();
-        int total = cantidad * 4;
+        dp = detallePedidoBL.valorProducto(idProducto);
+        int precio = dp.getPrecioventa();
+        int total = cantidad * precio;
+        dp.setIdProducto(idProducto);
         dp.setIdPedido(id);
         dp.setCantidad(cantidad);
-        dp.setPrecioventa(4);
+        dp.setPrecioventa(precio);
         dp.setTotal(total);
-      
         detallePedidoBL.insertar(dp);
         return new ModelAndView("redirect:/detallePedido.txt?id="+id);
     }
@@ -63,8 +64,9 @@ public class DetallePedidoController {
     @RequestMapping("deleteDetallePedido.txt")
     public ModelAndView Delete(HttpServletRequest request) {
         id = Integer.parseInt(request.getParameter("id"));
+        int idpedido = Integer.parseInt(request.getParameter("idpedido"));
         detallePedidoBL.eliminar(id);
-        return new ModelAndView("redirect:/pedido.txt");
+        return new ModelAndView("redirect:/detallePedido.txt?id="+ idpedido);
     }
     
      @RequestMapping(value="editaDetallePedido.txt",method=RequestMethod.GET)

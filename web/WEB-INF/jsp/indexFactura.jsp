@@ -78,7 +78,9 @@
                         <td>${factura.FechaEntrega}</td> 
                         <td>${factura.observaciones}</td>
                         <td>
-                            <a onclick="return confirm('¿Desea ANULAR la facturar?');" href="deleteFactura.txt?id=${factura.idfactura}" class="btn btn-outline-danger fa fa-ban fa-2x"> </a>
+                            <c:if test="${factura.estado == 0}">
+                            <a onclick="return confirm('¿Desea ANULAR la facturar?');" href="editarEstadoFactura.txt?id=${factura.idfactura}" class="btn btn-outline-danger fa fa-ban fa-2x"> </a>
+                            </c:if>
                         </td>
                     </tr>
                 </c:forEach>

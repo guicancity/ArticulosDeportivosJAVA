@@ -79,7 +79,7 @@
                                 <a href="editaDetallePedido.txt?id=${detallePedidos.id}" class="btn btn-outline-info fa fa-edit fa-2x"> </a>
                             </td>
                             <td>
-                                <a onclick="return confirm('¿Esta seguro?');" href="deleteDetallePedido.txt?id=${detallePedidos.id}" class="btn btn-outline-danger fa fa-trash fa-2x"> </a>
+                                <a onclick="return confirm('¿Esta seguro?');" href="deleteDetallePedido.txt?idpedido=<%=i%>&id=${detallePedidos.id}" class="btn btn-outline-danger fa fa-trash fa-2x"> </a>
                             </td>
                         </tr>
                     </c:forEach>

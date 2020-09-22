@@ -33,19 +33,18 @@ public class FacturaController {
         mav.setViewName("indexFactura");
         return mav;
     }
-
-    @RequestMapping(value = "editarFactura.txt", method = RequestMethod.GET)
-    public ModelAndView Editar(HttpServletRequest request) {
+  /*  
+    @RequestMapping("deleteDetallePedido.txt")
+    public ModelAndView Delete(HttpServletRequest request) {
         id = Integer.parseInt(request.getParameter("id"));
-        datos = facturaBL.buscar(id);
-        mav.addObject("lsFactura", datos);
-        mav.setViewName("editarFactura");
-        return mav;
+        detallePedidoBL.eliminar(id);
+        return new ModelAndView("redirect:/pedido.txt");
     }
-
-    @RequestMapping(value = "editarPersona.txt", method = RequestMethod.POST)
-    public ModelAndView Editar(Factura f) {
-        facturaBL.actualizar(f);
+    */
+   @RequestMapping("editarEstadoFactura.txt")
+    public ModelAndView Delete(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
+        facturaBL.actualizar(id);
         return new ModelAndView("redirect:/factura.txt");
     }
 

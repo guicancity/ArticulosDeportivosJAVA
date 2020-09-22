@@ -7,6 +7,8 @@ package Business;
 
 import Data.DetallePedidoDL;
 import Model.DetallePedido;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -15,6 +17,7 @@ import java.util.List;
  */
 public class DetallePedidoBL {
     DetallePedidoDL detallePedidoDL = new DetallePedidoDL();
+    ResultSet rs;
     
     public List listar(int id){
         return detallePedidoDL.listar(id);
@@ -33,8 +36,14 @@ public class DetallePedidoBL {
         detallePedidoDL.eliminar(i);
         
     }
-    public List valorProducto(int id){
-       return detallePedidoDL.valorProducto(id);
-    }
-    
+    public DetallePedido valorProducto(int id) throws SQLException{
+        rs = detallePedidoDL.valorProducto(id);
+       while(rs.next()){
+           DetallePedido dp = new DetallePedido();
+           
+           dp.setPrecioventa(rs.getInt("Valor"));
+           return dp;
+       }
+        return null;
+    } 
 }

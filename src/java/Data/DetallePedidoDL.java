@@ -6,7 +6,9 @@
 package Data;
 
 import Model.DetallePedido;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -18,16 +20,22 @@ public class DetallePedidoDL {
     Conexion conexion =  new Conexion();
     JdbcTemplate jdbctemplate = new JdbcTemplate(conexion.conectar());
     List datos;
+    ResultSet rs;
+    Statement st;
     
      public List listar( int id){
         String sql = "SELECT dp.Id,p.Nombre,dp.Cantidad,dp.PrecioVenta,dp.Total FROM detallepedido dp inner join producto p on p.Id = dp.IdProducto WHERE IdPedido = " + id +" ORDER BY dp.Id desc";
         datos = jdbctemplate.queryForList(sql);
         return datos;
     }
-     public List valorProducto( int id){
+     public ResultSet valorProducto(int id) throws SQLException{
+       rs = null;
+       
         String sql = "SELECT valor from producto where id = "+ id;
-        datos = jdbctemplate.queryForList(sql);
-        return datos;
+        st = (Statement) jdbctemplate.getDataSource().getConnection().createStatement();
+        rs = st.executeQuery(sql);
+        
+        return rs;
     }
     public void insertar(DetallePedido dp){
         String sql="INSERT INTO detallepedido (IdPedido, IdProducto, Cantidad, PrecioVenta, Total) VALUES (?,?,?,?,?)";
@@ -35,7 +43,7 @@ public class DetallePedidoDL {
           jdbctemplate.update(sql,dp.getIdPedido(),dp.getIdProducto(),dp.getCantidad(), dp.getPrecioventa(),dp.getTotal());  
         } catch (Exception e) {
             System.out.print("Data.DetallePedidoDL.insertar()");
-        }
+        } 
         
     }
     
@@ -56,7 +64,6 @@ public class DetallePedidoDL {
         this.jdbctemplate.update(sql);
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        }
-           
+        }     
     }
 }

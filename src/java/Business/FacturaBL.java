@@ -24,8 +24,8 @@ public class FacturaBL {
       public List buscar(int id){
         return facturaDL.buscar(id);
     }
-    public void actualizar(Factura f){
-        facturaDL.actualizar(f);
+    public void actualizar(int id){
+        facturaDL.actualizar(id);
     }
     
 }
