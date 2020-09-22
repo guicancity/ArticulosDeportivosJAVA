@@ -58,6 +58,7 @@
                         <th>Fecha Entrega</th>
                         <th>Observaciones</th>
                         <!--<th>Imagen</th>-->
+                        <th>Estado</th>
                         <th colspan="3" class="text-center">Acciones</th>
                     </tr>
                 </thead>
@@ -68,6 +69,14 @@
                             <td>${pedidos.fechaEntrega}</td> 
                             <td>${pedidos.observaciones}</td> 
                            <!-- <td>${pedidos.imagen}</td> -->
+
+                            <c:if test="${pedidos.estado == 0}">   
+                                <td> <span class="badge badge-primary"> Sin generar </span> </td>
+                            </c:if>
+                            <c:if test="${pedidos.estado == 1}">   
+                                <td> <span class="badge badge-danger"> Factura generada </span> </td>
+                            </c:if>
+
                             <td>
                                 <a href="detallePedido.txt?id=${pedidos.id}" class="btn btn-outline-success fa fa-cart-plus fa-2x"> </a>
                             </td>
@@ -75,7 +84,9 @@
                                 <a href="editarPedido.txt?id=${pedidos.id}" class="btn btn-outline-info fa fa-edit fa-2x"> </a>
                             </td>
                             <td>
-                                <a onclick="return confirm('¿Desea facturar el pedido?');" href="factura.txt?id=${pedidos.id}" class="btn btn-outline-secondary fa fa-file fa-2x"> </a>
+                                <c:if test="${pedidos.estado == 0}">
+                                    <a onclick="return confirm('¿Desea facturar el pedido?');" href="editarEstadoPedido.txt?id=${pedidos.id}" class="btn btn-outline-secondary fa fa-file fa-2x"> </a>
+                                </c:if>
                             </td>
                         </tr>
                     </c:forEach>

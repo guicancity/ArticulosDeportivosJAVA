@@ -56,11 +56,12 @@
                         <th>Cliente</th> 
                         <th>Fecha Entrega</th>
                         <th>Observaciones</th>
+                        <th>Estado</th>
                         <th class="text-center">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                   <!-- 
+                    <!-- 
                     <c:forEach var="depto" items="${lsDeptos}">
                         <c:if test="${depto.id!=editCiud[0].idDepto}">
                             <option value="${depto.id}" >${depto.nombre}</option>                                     
@@ -70,20 +71,27 @@
                         </c:if>
                     </c:forEach>
                     
-                   --> 
-                    
-                <c:forEach var="factura" items="${lsFactura}">
-                    <tr>                               
-                        <td>${factura.nombre1}</td>
-                        <td>${factura.FechaEntrega}</td> 
-                        <td>${factura.observaciones}</td>
-                        <td>
-                            <c:if test="${factura.estado == 0}">
-                            <a onclick="return confirm('¿Desea ANULAR la factura?');" href="editarEstadoFactura.txt?id=${factura.idfactura}" class="btn btn-outline-danger fa fa-ban fa-2x"> </a>
+                    --> 
+
+                    <c:forEach var="factura" items="${lsFactura}">
+                        <tr>                               
+                            <td>${factura.nombre1} ${factura.nombre2} ${factura.apellido1} ${factura.apellido2} </td>
+                            <td>${factura.FechaEntrega}</td> 
+                            <td>${factura.observaciones}</td>
+                            <c:if test="${factura.estado == 0}">   
+                                <td> <span class="badge badge-primary"> Activo </span> </td>
                             </c:if>
-                        </td>
-                    </tr>
-                </c:forEach>
+                            <c:if test="${factura.estado == 1}">   
+                                <td> <span class="badge badge-danger"> Anulado </span> </td>
+                            </c:if>
+
+                            <td>
+                                <c:if test="${factura.estado == 0}">
+                                    <a onclick="return confirm('¿Desea ANULAR la factura?');" href="editarEstadoFactura.txt?id=${factura.idfactura}" class="btn btn-outline-danger fa fa-ban fa-2x"> </a>
+                                </c:if>
+                            </td>
+                        </tr>
+                    </c:forEach>
                 </tbody>
             </table>
         </div>

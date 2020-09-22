@@ -14,21 +14,31 @@ import java.util.List;
  * @author Xiomara
  */
 public class PedidoBL {
+
     PedidoDL pedidoDL = new PedidoDL();
-    
-    public List listar(){
-        return pedidoDL.listar();      
+
+    public List listar() {
+        return pedidoDL.listar();
     }
-    
-     public void insertar(Pedido p){
-         pedidoDL.insertar(p);
+
+    public void insertar(Pedido p) {
+        pedidoDL.insertar(p);
     }
-    
-     public List buscar(int id){
+
+    public List buscar(int id) {
         return pedidoDL.buscar(id);
     }
-    public void actualizar(Pedido p){
+
+    public void actualizar(Pedido p) {
         pedidoDL.actualizar(p);
     }
-   
+
+    public void actualizarestado(int id) {
+        pedidoDL.actualizarestado(id);
+    }
+
+    public void actualizarestado1(int id) {
+        pedidoDL.actualizar1(id);
+    }
+
 }

@@ -19,36 +19,37 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Xiomara
  */
 public class PedidoController {
-    ModelAndView mav=new ModelAndView();
+
+    ModelAndView mav = new ModelAndView();
     PedidoBL pedidoBL = new PedidoBL();
     PersonaBL personaBL = new PersonaBL();
     int id;
     List datos;
-    
+
     @RequestMapping("pedido.txt")
-    public ModelAndView Lista(){
+    public ModelAndView Lista() {
         datos = pedidoBL.listar();
         mav.addObject("lspedido", datos);
         mav.setViewName("indexPedido");
         return mav;
-}
-    
-    @RequestMapping(value="insertaPedido.txt",method=RequestMethod.GET)
-    public ModelAndView Agregar(){
+    }
+
+    @RequestMapping(value = "insertaPedido.txt", method = RequestMethod.GET)
+    public ModelAndView Agregar() {
         mav.addObject(new Pedido());
-        datos =  personaBL.listar();
+        datos = personaBL.listar();
         mav.addObject("lsPersona", datos);
         mav.setViewName("insertaPedido");
         return mav;
     }
-    
-    @RequestMapping(value="insertaPedido.txt",method=RequestMethod.POST)
-    public ModelAndView Agregar(Pedido p){        
+
+    @RequestMapping(value = "insertaPedido.txt", method = RequestMethod.POST)
+    public ModelAndView Agregar(Pedido p) {
         pedidoBL.insertar(p);
         return new ModelAndView("redirect:/pedido.txt");
     }
-    
-      @RequestMapping(value = "editarPedido.txt", method = RequestMethod.GET)
+
+    @RequestMapping(value = "editarPedido.txt", method = RequestMethod.GET)
     public ModelAndView Editar(HttpServletRequest request) {
         id = Integer.parseInt(request.getParameter("id"));
         datos = pedidoBL.buscar(id);
@@ -62,7 +63,13 @@ public class PedidoController {
         pedidoBL.actualizar(p);
         return new ModelAndView("redirect:/pedido.txt");
     }
-}
-    
-    
 
+    @RequestMapping("editarEstadoPedido.txt")
+    public ModelAndView Delete(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
+        pedidoBL.actualizarestado(id);
+        pedidoBL.actualizarestado1(id);
+        return new ModelAndView("redirect:/factura.txt");
+    }
+    
+}

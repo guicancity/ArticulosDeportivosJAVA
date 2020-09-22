@@ -10,8 +10,9 @@ package Model;
  * @author Xiomara
  */
 public class Pedido {
+
     private int id, idPersona;
-    private String fechaEntrega, observaciones, imagen; 
+    private String fechaEntrega, observaciones, imagen, estado;
 
     public int getId() {
         return id;
@@ -51,7 +52,14 @@ public class Pedido {
 
     public void setImagen(String imagen) {
         this.imagen = imagen;
-    }  
-    
-    
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
 }
