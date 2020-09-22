@@ -29,17 +29,8 @@ public class FacturaDL {
         datos = jdbctemplate.queryForList(sql);
         return datos;
     }
-    /*    
-        public void eliminar(int id){
-        try {
-            String sql = "DELETE FROM detallepedido WHERE Id =" + id;
-        this.jdbctemplate.update(sql);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }     
-    }
-        
-        */
+  
+   
         public void actualizar(int id){
         try {
             String sql="UPDATE factura SET Estado= 1  WHERE Id=" + id;

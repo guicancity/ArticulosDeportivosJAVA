@@ -33,15 +33,7 @@ public class FacturaController {
         mav.setViewName("indexFactura");
         return mav;
     }
-  /*  
-    @RequestMapping("deleteDetallePedido.txt")
-    public ModelAndView Delete(HttpServletRequest request) {
-        id = Integer.parseInt(request.getParameter("id"));
-        detallePedidoBL.eliminar(id);
-        return new ModelAndView("redirect:/pedido.txt");
-    }
-    */
-   @RequestMapping("editarEstadoFactura.txt")
+     @RequestMapping("editarEstadoFactura.txt")
     public ModelAndView Delete(HttpServletRequest request) {
         id = Integer.parseInt(request.getParameter("id"));
         facturaBL.actualizar(id);

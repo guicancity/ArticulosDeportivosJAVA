@@ -79,7 +79,7 @@
                         <td>${factura.observaciones}</td>
                         <td>
                             <c:if test="${factura.estado == 0}">
-                            <a onclick="return confirm('¿Desea ANULAR la facturar?');" href="editarEstadoFactura.txt?id=${factura.idfactura}" class="btn btn-outline-danger fa fa-ban fa-2x"> </a>
+                            <a onclick="return confirm('¿Desea ANULAR la factura?');" href="editarEstadoFactura.txt?id=${factura.idfactura}" class="btn btn-outline-danger fa fa-ban fa-2x"> </a>
                             </c:if>
                         </td>
                     </tr>
