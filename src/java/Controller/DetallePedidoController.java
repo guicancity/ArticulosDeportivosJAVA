@@ -79,7 +79,11 @@ public class DetallePedidoController {
     }
     
     @RequestMapping(value="editaDetallePedido.txt",method=RequestMethod.POST)
-    public ModelAndView Editar(DetallePedido dp) {
+    public ModelAndView Editar(HttpServletRequest request,DetallePedido dp) {
+        int cantidad = dp.getCantidad();
+        int precio = Integer.parseInt(request.getParameter("pp"));
+        int total = cantidad * precio;
+        dp.setTotal(total);
         detallePedidoBL.actualizar(dp);
         return new ModelAndView("redirect:/pedido.txt");
     }

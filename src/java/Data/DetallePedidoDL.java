@@ -54,8 +54,8 @@ public class DetallePedidoDL {
     }
     
     public void actualizar(DetallePedido dp){
-        String sql="UPDATE detallepedido SET Cantidad=? WHERE Id=?";
-        jdbctemplate.update(sql, dp.getCantidad(), dp.getId());     
+        String sql="UPDATE detallepedido SET Cantidad=?, total = ? WHERE Id=?";
+        jdbctemplate.update(sql, dp.getCantidad(), dp.getTotal(), dp.getId());     
     }
   
     public void eliminar(int id){
